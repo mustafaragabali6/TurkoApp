@@ -1,0 +1,87 @@
+{
+  "name": "Turko — الشامل في قواعد ومحادثة اللغة التركية",
+  "short_name": "Turko",
+  "id": "https://mustafaragabali6.github.io/turko/",
+  "start_url": "https://mustafaragabali6.github.io/turko/",
+  "scope": "https://mustafaragabali6.github.io/turko/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "lang": "ar",
+  "dir": "rtl",
+  "description": "تطبيق Turko و Turko PLUS+ لتعليم وتدريب قواعد ومحادثة وإرشاد اللغة التركية — إعداد وتطوير Mostafa Ragab HOCA",
+  "categories": [
+    "education",
+    "books",
+    "travel"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Turko Mobile App Screen"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Turko Web App Screen"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "فهرس القواعد الشامل",
+      "short_name": "القواعد",
+      "description": "استعراض قواعد اللغة التركية الشاملة",
+      "url": "https://mustafaragabali6.github.io/turko/#viewCatalog",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Turko PLUS+ VIP",
+      "short_name": "Turko PLUS+",
+      "description": "الإرشاد السياحي والبرامج المهنية",
+      "url": "https://mustafaragabali6.github.io/turko/#plus",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
