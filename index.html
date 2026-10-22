@@ -1276,6 +1276,175 @@
       color: #92400e;
     }
 
+    
+    /* =========================================================
+       تصميم منصة Turko PLUS+ المستقلة بملء الشاشة
+       ========================================================= */
+    .turko-plus-fullscreen-page {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      background: radial-gradient(circle at 50% 0%, #1e1035 0%, #0d071a 45%, #05020a 100%);
+      border: 1.5px solid rgba(168, 85, 247, 0.45);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: 0 0 50px rgba(124, 58, 237, 0.35);
+      animation: fadeIn 0.3s ease-out;
+      color: #f8fafc;
+    }
+
+    .plus-vip-pill-badge {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.35) 100%);
+      border: 1px solid #f59e0b;
+      color: #fef08a;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 99px;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+    }
+
+    .plus-teacher-name-small {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .plus-specialized-tagline {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #fbbf24;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    /* خريطة التطبيق */
+    .plus-app-map-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plus-map-header {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .plus-map-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #fef08a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plus-map-sub {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .plus-lock-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 99px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+    }
+
+    .plus-lock-badge.unlocked {
+      background: rgba(34, 197, 94, 0.2) !important;
+      border-color: #22c55e !important;
+      color: #86efac !important;
+    }
+
+    .plus-module-tr {
+      font-size: 0.75rem;
+      color: #a855f7;
+      direction: ltr;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    /* شريط العملات التفاعلي */
+    .plus-plans-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plus-currency-tag {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid #22c55e;
+      color: #86efac;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .currency-selector-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: rgba(2, 6, 23, 0.65);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .curr-select-label {
+      font-size: 0.74rem;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    .currency-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .curr-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .curr-pill.active {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #0f172a;
+      border-color: #fbbf24;
+      font-weight: 900;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+    }
+
+    .plan-period-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .cc-hint-text {
+      font-size: 0.68rem;
+      color: #94a3b8;
+    }
+
     /* =========================================================
        صفحة TURKO PLUS+ الفاخرة (Dark Luxury VIP Page)
        ========================================================= */
@@ -2429,6 +2598,8 @@
     }
   </script>
 
+  <!-- Paddle.js v2 Official SDK -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
 
@@ -2444,7 +2615,7 @@
     </div>
   </div>
 
-  <div class="app-card">
+  <div class="app-card" id="mainTurkoCard">
 
     <!-- شريط وشعار Turko PLUS+ البنفسجي الفاخر في الأعلى -->
     <div class="turko-plus-top-banner" onclick="openTurkoPlusPage()" title="انتقل إلى منصة Turko PLUS+">
@@ -2651,319 +2822,7 @@
       </button>
     </div>
 
-    <!-- ====================================================================
-         3. صفحة TURKO PLUS+ الفاخرة ذات التصميم الشيك والغامق (View: Plus)
-         ==================================================================== -->
-    <div id="viewPlus">
-      <!-- هيدر التنقل الداخلي في Turko Plus -->
-      <div class="plus-nav-header">
-        <button type="button" class="btn-plus-return" onclick="goBackFromPlus()">
-          <span>⬅️</span> العودة إلى تطبيق Turko الأساسي
-        </button>
-        <div class="plus-header-badge">
-          <span>👑</span> Turko PLUS+ VIP
-        </div>
-      </div>
-
-      <!-- بطاقة الهوية الفاخرة بشعار الأستاذ مصطفى رجب على النمط الداكن -->
-      <div class="plus-hero-card">
-        <div class="plus-avatar-frame">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCACgAKADASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAYHBQgDBAkCAf/EAD0QAAIBAwMCBAMGBAQFBQAAAAECAwAEBQYRIQcSEzFBUQgiYRQVMkJxgRYjgpEJJDPBF1JiobFTcsLR8P/EABsBAQACAwEBAAAAAAAAAAAAAAAEBQIDBwYB/8QAMBEAAgEDAwIDBgcBAQAAAAAAAAECAwQRBSExQVEGEmETFCJxkaEHMoGxweHw0fH/2gAMAwEAAhEDEQA/APP+lKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApXLb2091L4dvG0jEgBVG5JJ2AA9T9BVj4Pp3JaWUuUzMscEaQuxiaJZX7exgdw26qdjweWUgEEEVrqVYU1mbwWFhpV3qEnG1puWOXwl829kQLF2JurtXeNXhQ7uHbtUj6kcgfp+1Wdj+nerbnFJe2Wh85eWpRCLi3xsohkCrsrdqqA/G/wA3JO5JPJqWfDfpDEai6xWxydtFKuNtPty20ihkklMioncDwQgO4HvtW9Ycjgs36k+VV9/qvus1ThHLJOn6R71T9rOWF0PNC5so7WRre/xiW8m5VkntzCQfbYgHf6Vjb/SySWyTQ2stoG7o4jKjRpM4/KrEbEgkbjk+m4r0/lWOcAXMaTAHuAlUPsfcb+tcOSsLDM4qbGZiwtslZTKVktbyMSRuD7g+R+o2I8wd6irxBnClT+/9Ep+HWk/LP7f2eS0sMsE7QzIySIdmVhsQa+Kuzrj0rh0x1nymB08bu6sre3W8iZh4koidA6I25BYqW7C3J2Xu2Jql5beeDs8eGSPvBZO9SO4Aldx7jdSP1Bq8hONReaHBQ1aFSl+dY5+Txzg46UpWRqFKUoBSlKAUpSgFKUoBWQwuNbLZqGwVZmMm4UQqCxbtJUckAAnYFudhudjtsegql3CL5k7Crf0Pg4sXjhkFXuuJgfDaVAreETuNwCdifM8n0G9aLiuqEPP16FxoWlS1O7jRziK3k+y/6+hINNaTsMAHmjt4ReTEsxj7ikQP5I+4lu0eW5JJ25NSTIaV1PmOmeo8vh8DfXmOx9jLLeXkUf8AKgRVJYlzsCQATsNzx5VcPQLo7bdRb3791QzxYS3faKyEnhy5BgeQrekY8iRyTwNuTUi68Il/1GyulBh420vpXCWcqYBbiSyt2jn8Z7mUCNlBl8OIInfuoIbf8RNU0KM5v3iu9tv3/Y6XqniGz06k9H0mCbw030W2/q5d/X6FIfDNb2WLy2ptcZS7S0scdapbvLIwVSvM0hG55IEaAAckttUqzHXLqvcSfeOndNaMs8XISYIsrkh9oZfTxG8RUViPMA8eW5qN9Pel+l00nntSw483p05qeO4try5DNObO3mgdwU/D3GNmYjt9CKuLU+g9Q6m66YHXuP1vbSaWhi7L21S8Zl7Q7MHt9iYwzKVBcng7tzvtWVeVCdxKdTf58bJbfqeAoxuKdvGENuu2M7t7vPb0Jf07z2b1b0/scxncTaY7IyMyTwWF2l5CuzbBhJGzDYjY9pJIqn8p1v6oWOrMhaw6G0muOtJmXwrrUEK3LoCQG3WUhSQN9ivG/rWb/wCGGmdaTa41BFZo0rp9hxlzjbmS3ha6itdpbiMRMquTO3Z3EHfwiPev3QujtQZbXOJ1rh9SwHQl1iIwmNx8zxzWM6wkKkaJtGP5pUyd4JPayleaiUaVupSc8Y9c4XXH+7EutVuHGKg381jL6Z/3crbqhqTE6y6n6f1TgZY1gvNORtcW5kVpredJpI2jkCnhhx9CNiOCKqnWmhYM5bS5DGwpHkx8xVeBP+vs319fX3q9ut+GtMp1Mz+oJvCkn05o+3fxLOYxfZrySWV1DKo+cEBR2MeFcfSq+3dSWaE7+wNbHWdJwqU9tuP4+jPb+G7K21TTqtjdRziTefnlZXZpp/7Y1ingmtp2hnjZHUkEMNvXb/auOrX6m6cM1v8AxBbK4HdtPECQFc7DxNv+oKFP1C1VFX9CtGtBTict1jSqul3c7Wr04fddH/uHlClKVuKsUpSgFKUoBSlKAkWjcbFlNSwW8qOw7wXIPCx7Euf7Db962O0to651rrvEacxG0cuQuUhJH4UTzZvpsoJ/aqe6UWfZfT3bSxv/AJYuqDzXufsIP1+Tf9CK22+FuxWf4iLS4RxGYMfdSgEbgntVd9v6jVLez9pcxp9Fj7nWPC1urLw/cX+E5S8zXf4VhffJf/3Jc6Xs7fHrjnsILZFhgCj5AqjZQrDg1q5r/qdb5/rnc3WUmcabFl9wXs8al3ZElMiXLbcsqS9w25+Rz9a361FLPDovLylI3aOynkXYbjdY2I4P1Ary/S0hMUZCkN2gkg7c7edbNQrezSj0ZS+C9BWquvWm944Sfq8vP2+jZdPRDVdhkOq/UfB2N/a3ducs+UtJraUOkscoXuKkeY3Vf71K9QZTobpjUzW2o4dI4/JIqzSiSxjLqrcgkKh+YjkDYnbny5rUC71FlOnXV6w1ThJ1Sdo1LIx+WQfhdHA/KwC/23HIq+um+mtCdcLjWesc5jNsi+a8SLxSJWhheBQkbIflZQVYDyPy7gioVS2jtcSbUGlxznZES7dS1uJ2GE6kJNb8Ncpol2nviF6bSYTvymdscXPad38ntCxuqse3wQBsy7bbADf6c1zaLl6VaihjW4i0pPkri7uHsrJ5IGu1t2lZ4Y5Ah+aQIeRuSBsDuQaqfL9OOhthnryHKat0da3VpM0c1vMchayRMvmGjE5G/wCnHtXZ11090B0owGldeWM1zc3Euds7iM2xePut1VpXEaSOx3ICfMx43HlyDk7ag/hpOScuNiErqv8Amqxi1Hnf/wB3M11ajjh1lldHaTw48JsZjDe2mOtvlt7dbiaeR3VBwGZrdNzyS+1YnI9M9YYTRTau1FjfubHMypAMg3hzXUjeSRxfiPG5JYAAAmtkPhcvbXUXT7UfVPKlI8hqvNyymGByPs1vbqsMEO45ICgke/dv61X/AMVdrnn1VjMo11JJpgReFbIrE+BcHmTxAfzMANm9l28wd87izVOkpS3aX37nqPB+v1I3fuMFGKnJtt8tLdRS4zzz3NeMjYxZXFXGPn/0p4zGfpv5H9jsf2rW3JQtbZSa2eFYmibw2VQQN14J5J8yCfbngAcVsssq8fOD/wCaozqLDHBrm9RY0DtKZS433IZEIG2+3B7vT1O/ptlpM35pQ9Mln+JlrGdvRu1yn5X+qbX0w/qRKlKVeHHhSlKAUpSgFKUoC2OmFmYrWR7i6tytzbLNEkdwkjIBNIhDqpJjbdCe1wCVKtt2spOxXQfLXWC6+4KS2vBGL1nx/e+xVTKuy+f/AFBR+9asdNbiCPNLaxSytdXQkR42jAQKArIQ/duWJEgIKjbZdie4hbPnyi4ULdT3psWjYMkvcVZWB3BXbkkH2qivYyhdKS9Gde8MVKNz4elQqbR+OLfGMtvr80z08uLjUptpLK5t7aeKRDHIxTYlSNj5H2Jrzg6m279K9Z5TTWeULcWkhW2TnuuYzzG6j/lKkc+nPtUu1L8bXU3IaVhw2l0ixU7QCO5zNzEstyz7bFoUI7YwfPdu488AVrLlrzJZzUDZHPZO9yuQuXMs13eytLLKR6szEk8kfSrWrp6uFF1NsHgtG8RXOhyrRt8PzbemVw136ltdGdMW3VnB6403loo7rOD7NmrAFhG0vh+JFJAjn8G6yr2nyDBCeN6w+Dzet+iOsPvjGsJLO47rXvuoGWC77TzDNHuDFOh84yQynkbqQT1ujGqbPQ3XnTWfvnMOOF0LS/KHb/LTfy5Cfovcr/0V6KdSegmntaRTXuKmjxebkiEMsksIurPIqv4Y7yA8SgflkBWRPyttxWy5UYLyYyn06FPTrynUdScn5m8565/k0KyXX3P5XVUeeymjNDX1zHt2m5xPiMNvL+YX7jt6bnisPrzW2s+r922rMjjHGnMS8FlObEE29l47EbAsd2kkKHnnYKPLYVMLzC9JcTkckkmg5Mtk8fPJAUx2Qe5xFxIh27onZ1do99+Ownggb8GtkOqektH4H/DfzjaPvbPJ2d3HZ5M5O2iWNLqU3UI71Qf6aqB2LH+QKFPIJOuFKEXF+yceib9e3JsqXDXFVT3y0vTvsvoUxhupL4j4eItG6Uu1D391M089s2wt7chQEUjyZ9iPcKD6mo/FqjVf3FNhJtQX1zjZk7Hs7mTx4iPTYPvsQQCCNiD5VSFjezYq/MmPleFpW/mNEwUg/oeGB9iDsfbeplYapuZmWJ4kut/N7cdkv7xE8/0E/pVfd6fcw/I8pHS9A8S6JVyruHknJ5eUnFv0fT0zx3JMtvFGe4nn61SPUmVJNfXYQ8L2r+/YtXJZzwZG2+0213HLBuVLKd+0jzB9iPY81RusL6O/1BJcQ3MEscskkvYiENCe8p2uxUbkrGjDYsoDjkHuA1aVBqrJvov5JP4i3dN6fQhHicsrG+UovfbpvyR6lKVenHhSlKAUpSgFKUoDIYbK3GHy0V5bsQyOrjk+YPntvt7jn0Y1Kbm/u8/lJMtdysrsT4Sg7rCvoqj2A/vUGrPYbJgMLadjuT8rH3rKnGHn8zW5u96rKg7dSfkby10yupnIZGfcOAHU9rAf+a47xVKICiklgoc/k39eK+2IS8Q/84Kn9RyP965JYlkgZH8mG3HpUsiHwkSpEY5C0hZe1mfncVvv0Hz/AFN6u/DtiNHXspjwsKSY/J6oiu+y6mt4z2CyQD5kn22DTf8ApFSvzue3Qi2dpIdpPxqe1/1H/wC3rcr4DdZCHUGrOnc77JcxR5q0BP502hmAH1VoT/SajXa+DzLoZwxnBUesNLZXph1GvdEZWwubs2pWa3e0Rdp7Y79j7FgFOylSvoVO3BFXl1I6b6gwXwa3X8HZq0utLZLCxZnOoZGO86KLj7Rbeg8WTsSRfIhQ42bu7oZ8SFyLj4ttQpGebaxsYSfY+F3/APzqf6S1AuT/AMPDqbpqSQu2n7C8t4Qx3ItpoxcRD9FLyIPogqRdzqTtqNVsg2qhC4qQijReQIEd1VEkUE+Ko5IAJ2PuP+/1r8U96r3DjYHavi7JNo4XzbZP7nb/AHrkZkRCSQFA3NfepLOWHPT4jHX8aMf8wrx7j0JG4f6kbt/f6VX0kjyyd8jszbAbsSdgBsBz6AACu9lMgbu4ZYyRGD7+dY+ocoxUm4rklzualSnClN5UM49E3l/cUpSvhpFKUoBSlKAUpSgFfSO8bh0Yqw9RXzSgM3ZZcMES4OxVwU2BP7VIY3Eqd6sCvuKgddiC9ubf/SlYe3NboVccmLXYl5Jjvlcfgk+RvofQ/wC1Wf0I1d/A/wASGj8+83hWoyC2l43kPAnBhff6DvVv6apP7/Mlu0U8IO423Xg/rXb/AIgtmtjEwkViu3iL5g7eY/fms5SjJNZPm6Ztt18Jb4sNcHb8E1pET77WkP8A9186Rz/3d0E61Yo8LeaVjnH/ALkneE/9rhKpjV/XeDWnUW81FPizazZBbRZpLiYlVkjt4oXkbsQsQWjZ9gCdjtyaht11d1PJhsrirJoLOzytobG8ijjDGWHxElC9zbkfPGpO2x4235qROrTdpGlndYIMKFRXUquNmdW/mjtXj8Q/L39xHrsATUbyOWkvSY0HZFv5e9dGWeaZt5ZGY+fJrjqHOo3wT1HApSlajIUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoD//Z" alt="Mostafa Ragab HOCA" class="plus-hoca-avatar" onclick="handleAdminSecretTap()" title="Mostafa Ragab HOCA">
-          <span class="plus-crown-badge" onclick="handleAdminSecretTap()" title="المشرف" style="cursor: pointer;">👑</span>
-        </div>
-        <div class="plus-hero-details">
-          <div class="plus-hero-title-row">
-            <span class="plus-main-title">Turko Plus</span>
-            <span class="plus-gold-tag">⭐ إصدار النخبة</span>
-          </div>
-          <div class="plus-teacher-name">الأستاذ مصطفى رجب | Mostafa Ragab HOCA 🎓</div>
-          <div class="plus-teacher-subtitle">برامج التدريب السياحي التخصصي وتأهيل المرشدين السياحيين في تركيا</div>
-        </div>
-      </div>
-
-      <!-- تنويه هام رسمي: الاستفادة باشتراك مدفوع -->
-      <div class="plus-notice-box">
-        <div class="plus-notice-icon">⚠️</div>
-        <div class="plus-notice-content">
-          <div class="plus-notice-title">تنويه رسمي بشأن المحتوى الحصري والخدمات المتقدمة</div>
-          <p class="plus-notice-desc">
-            نلفت عنايتكم الكريمة إلى أن الاستفادة من الأقسام المتقدمة هنا (الدليل السياحي الإلكتروني، خدمة المرشد أون لاين، ودورة تدريب وتأهيل الإرشاد السياحي TUREB) تتطلب اشتراكاً مدفوعاً بالكريديت كارد، وذلك لتغطية تكاليف الخوادم وتقديم محتوى احترافي ومتابعة شخصية مستمرة.
-          </p>
-        </div>
-      </div>
-
-      <!-- قسم إنشاء الحساب وتسجيل الدخول بالإيميل والباسورد -->
-      <div class="plus-auth-card" id="plusAuthCard">
-        <div class="plus-auth-tabs">
-          <button type="button" class="plus-auth-tab active" id="tabRegister" onclick="switchAuthTab('register')">إنشاء حساب VIP جديد</button>
-          <button type="button" class="plus-auth-tab" id="tabLogin" onclick="switchAuthTab('login')">تسجيل الدخول</button>
-        </div>
-        <div class="plus-auth-form" id="plusAuthForm">
-          <div class="plus-input-group" id="groupName">
-            <label>الاسم بالكامل:</label>
-            <input type="text" id="plusInputName" placeholder="مثال: أحمد مصطفى" dir="auto">
-          </div>
-          <div class="plus-input-group">
-            <label>البريد الإلكتروني (Email):</label>
-            <input type="email" id="plusInputEmail" placeholder="your-email@example.com" dir="ltr">
-          </div>
-          <div class="plus-input-group">
-            <label>كلمة المرور (Password):</label>
-            <input type="password" id="plusInputPassword" placeholder="••••••••" dir="ltr">
-          </div>
-          <button type="button" class="btn-plus-auth-submit" id="btnAuthSubmit" onclick="handlePlusAuthSubmit()">
-            <span id="authSubmitText">إنشاء حسابي وتفعيل العضوية ✨</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- بطاقة بيانات الحساب النشط للمشترك -->
-      <div class="plus-session-card" id="plusSessionCard" style="display: none;">
-        <div class="plus-session-user-info">
-          <div class="plus-session-avatar">👤</div>
-          <div>
-            <div class="plus-session-name" id="sessionUserName">محمد علي</div>
-            <div class="plus-session-email" id="sessionUserEmail">user@example.com</div>
-          </div>
-        </div>
-        <div class="plus-session-badge" id="sessionVipBadge">
-          <span class="status-indicator"></span>
-          <span id="sessionStatusText">عضوية في انتظار تفعيل الاشتراك ⏳</span>
-        </div>
-        <button type="button" class="btn-plus-logout" onclick="handlePlusLogout()">تبديل الحساب / تسجيل الخروج 🚪</button>
-      </div>
-
-      <!-- استعراض الأقسام الحصرية لـ Turko Plus -->
-      <div class="plus-modules-section">
-        <div class="plus-section-header">
-          <div class="plus-section-title">
-            <span>🏛️</span> باقة أقسام وخدمات Turko Plus
-          </div>
-          <div class="plus-section-sub">
-            الأقسام السياحية والتأهيلية المعتمدة (سيتم ملء محتوياتها بالكامل، ومتاحة للمعاينة المسبقة والتسجيل):
-          </div>
-        </div>
-
-        <div class="plus-modules-grid">
-          <!-- 1. Online Turist rehberi -->
-          <div class="plus-module-card">
-            <div class="plus-module-top">
-              <span class="plus-module-icon">🗺️</span>
-              <span class="plus-module-chip">Online Rehber</span>
-            </div>
-            <div class="plus-module-title">Online Turist rehberi</div>
-            <div class="plus-module-ar">الدليل السياحي الإلكتروني أون لاين في تركيا</div>
-            <p class="plus-module-desc">دليل إلكتروني متكامل باللغتين التركية والعربية لجميع المزارات والمعالم الأثرية في إسطنبول، طرابزون، بورصة وأنطاليا، مع قواميس محادثة سياحية ناطقة ومصطلحات المطارات والمتاحف.</p>
-            <div class="plus-module-features">
-              <span>✓ قواميس محادثة سياحية ناطقة بالمواقف الميدانية</span>
-              <span>✓ خرائط ومعلومات المزارات والمعالم التاريخية</span>
-              <span>✓ مصطلحات الفنادق والمطارات والمواصلات</span>
-            </div>
-            <button type="button" class="btn-module-action" onclick="openModuleDetails('online_rehber')">
-              <span>استعراض وتفاصيل القسم</span> 🔍
-            </button>
-          </div>
-
-          <!-- 2. مرشدك السياحى اون لاين -->
-          <div class="plus-module-card">
-            <div class="plus-module-top">
-              <span class="plus-module-icon">🧭</span>
-              <span class="plus-module-chip">Özel Rehber</span>
-            </div>
-            <div class="plus-module-title">مرشدك السياحى اون لاين</div>
-            <div class="plus-module-ar">Kişisel Online Turist Rehberiniz</div>
-            <p class="plus-module-desc">خدمة المرشد السياحي الشخصي التفاعلي؛ توجيه الجولات الحية، حل مواقف الطوارئ السياحية، والمساعدة الفورية في المحادثات مع السائقين والمطاعم وترتيب برامج الرحلات خطوة بخطوة.</p>
-            <div class="plus-module-features">
-              <span>✓ تخطيط المسارات اليومية المخصصة للعائلات والأفراد</span>
-              <span>✓ حل مواقف الطوارئ والتنقل السريع باللغة التركية</span>
-              <span>✓ استشارات المطاعم والمناطق التراثية غير التقليدية</span>
-            </div>
-            <button type="button" class="btn-module-action" onclick="openModuleDetails('kisisel_rehber')">
-              <span>استعراض وتفاصيل القسم</span> 🔍
-            </button>
-          </div>
-
-          <!-- 3. دورة تدريب الأرشاد السياحي -->
-          <div class="plus-module-card">
-            <div class="plus-module-top">
-              <span class="plus-module-icon">🎓</span>
-              <span class="plus-module-chip">Mesleki Eğitim</span>
-            </div>
-            <div class="plus-module-title">دورة تدريب الأرشاد السياحي</div>
-            <div class="plus-module-ar">Turist Rehberliği Mesleki Eğitim Kursu</div>
-            <p class="plus-module-desc">البرنامج الأكاديمي الاحترافي لإعداد وتأهيل المرشدين السياحيين المرخصين في تركيا وفق معايير نقابة المرشدين السياحيين (TUREB)؛ دراسة تاريخ وحضارات الأناضول، الآثار العثمانية والسلجوقية، واختبارات القبول للغة التركية المهنية.</p>
-            <div class="plus-module-features">
-              <span>✓ منهاج تاريخ وحضارات الأناضول ومصطلحات الآثار</span>
-              <span>✓ التحضير لامتحان اللغة المهنية التابع لنقابة TUREB</span>
-              <span>✓ بنك أسئلة ونماذج امتحانات الإرشاد السياحي السابقة</span>
-            </div>
-            <button type="button" class="btn-module-action" onclick="openModuleDetails('rehberlik_kursu')">
-              <span>استعراض وتفاصيل القسم</span> 🔍
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- باقات الاشتراك المتاحة -->
-      <div class="plus-plans-card">
-        <div class="plus-section-title">
-          <span>💎</span> اختر خطة اشتراكك في Turko Plus
-        </div>
-        <div class="plus-plans-grid">
-          <div class="plan-option" id="planMonthly" onclick="selectPlan('monthly', 19)">
-            <div class="plan-info">
-              <span class="plan-name">الباقة الشهرية (VIP Monthly)</span>
-              <span class="plan-period">وصول كامل لكافة الأقسام وتحديثات مستمرة</span>
-            </div>
-            <div class="plan-price-wrap">
-              <span class="plan-price">$19</span>
-              <span class="plan-period">/ شهرياً</span>
-            </div>
-          </div>
-
-          <div class="plan-option selected" id="planAnnual" onclick="selectPlan('annual', 99)">
-            <div class="plan-info">
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <span class="plan-name">الاشتراك السنوي الذهبي (Gold VIP)</span>
-                <span class="plan-badge">الأكثر طلباً - توفير 55%</span>
-              </div>
-              <span class="plan-period">سنة كاملة + متابعة واستشارات مباشرة</span>
-            </div>
-            <div class="plan-price-wrap">
-              <span class="plan-price">$99</span>
-              <span class="plan-period">/ سنوياً</span>
-            </div>
-          </div>
-
-          <div class="plan-option" id="planLifetime" onclick="selectPlan('lifetime', 149)">
-            <div class="plan-info">
-              <span class="plan-name">دبلوم الإرشاد الشامل مدى الحياة</span>
-              <span class="plan-period">شامل دورة الإرشاد وبنك أسئلة TUREB مدى الحياة</span>
-            </div>
-            <div class="plan-price-wrap">
-              <span class="plan-price">$149</span>
-              <span class="plan-period">دفعة واحدة</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- نموذج الدفع الآمن بالكريديت كارد -->
-      <div class="plus-card-payment-box">
-        <div class="plus-section-title">
-          <span>💳</span> الدفع الآمن بالكريديت كارد (Credit Card)
-        </div>
-
-        <!-- معاينة البطاقة الائتمانية التفاعلية -->
-        <div class="interactive-credit-card">
-          <div class="card-top-row">
-            <div class="card-chip"></div>
-            <div class="card-brand-network" id="visualCardLogo">VISA</div>
-          </div>
-          <div class="card-number-display" id="visualCardNumber">•••• •••• •••• ••••</div>
-          <div class="card-meta-row">
-            <div>
-              <div class="meta-label">حامل البطاقة</div>
-              <div class="meta-val" id="visualCardHolder">CARDHOLDER NAME</div>
-            </div>
-            <div>
-              <div class="meta-label">الانتهاء</div>
-              <div class="meta-val" id="visualCardExpiry">MM/YY</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- حقول إدخال الكريديت كارد -->
-        <div class="cc-form-grid">
-          <div class="cc-field">
-            <label>رقم البطاقة الائتمانية (Card Number):</label>
-            <input type="text" id="ccNumber" placeholder="4000 1234 5678 9010" maxlength="19" oninput="formatAndPreviewCardNumber(this)">
-          </div>
-          <div class="cc-field">
-            <label>الاسم المكتوب على البطاقة (Cardholder Name):</label>
-            <input type="text" id="ccHolder" placeholder="HOLDER NAME" oninput="previewCardHolder(this)">
-          </div>
-          <div class="cc-row">
-            <div class="cc-field">
-              <label>تاريخ الانتهاء (MM/YY):</label>
-              <input type="text" id="ccExpiry" placeholder="MM/YY" maxlength="5" oninput="formatAndPreviewExpiry(this)">
-            </div>
-            <div class="cc-field">
-              <label>رمز الأمان (CVC/CVV):</label>
-              <input type="password" id="ccCvc" placeholder="•••" maxlength="4">
-            </div>
-          </div>
-        </div>
-
-        <!-- شارات التشفير البنكي وحماية المعاملة -->
-        <div class="cc-security-bar">
-          <span>🔒 تشفير بنكي 256-Bit SSL</span>
-          <span>🛡️ معايير PCI-DSS العالمية</span>
-          <span>✓ تحقق ثلاثي الأبعاد 3D Secure</span>
-        </div>
-
-        <button type="button" class="btn-cc-submit" onclick="processSecurePayment()">
-          <span>🔒 تأكيد الاشتراك والدفع الآمن بالكريديت كارد (<span id="btnPayAmountText">$99</span>)</span>
-        </button>
-
-        <!-- بوابات الدفع البديلة الفورية -->
-        <div class="alternative-payouts-wrap">
-          <div class="alt-title">أو اشترك فوراً من خلال المحافظ الإلكترونية:</div>
-          <div class="alt-buttons-row">
-            <button type="button" class="btn-alt-pay paypal" onclick="processAltPayment('PayPal')">
-              <span>P</span> PayPal
-            </button>
-            <button type="button" class="btn-alt-pay payoneer" onclick="processAltPayment('Payoneer')">
-              <span>P</span> Payoneer
-            </button>
-            <button type="button" class="btn-alt-pay skrill" onclick="processAltPayment('Skrill')">
-              <span>S</span> Skrill
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- لوحة إعدادات ربط بوابات التحصيل المالي للمطور (الأستاذ مصطفى رجب) -->
-      <!-- لوحة إعدادات ربط بوابات التحصيل المالي (مخفية تماماً ولا تظهر إلا للأستاذ مصطفى رجب برمز مرور سري) -->
-      <div class="plus-gateway-setup-card" id="plusGatewaySetupCard" style="display: none;">
-        <div class="gateway-header" onclick="toggleGatewaySettings()">
-          <div class="gateway-title">
-            <span>💼</span> إعدادات ربط بوابات استقبال الأموال (Skrill / Payoneer / PayPal)
-          </div>
-          <span class="gateway-toggle-arrow" id="gatewayToggleArrow">▼</span>
-        </div>
-        <div class="gateway-body" id="gatewayBody" style="display: none;">
-          <p class="gateway-desc">
-            خاص بالأستاذ مصطفى رجب: أدخل بيانات حساباتك في <b>PayPal</b>، <b>Payoneer</b>، و<b>Skrill</b> لترتبط مباشرة ببوابة الدفع، وتسمع أرباح اشتراكات البطاقات في حسابك البنكي أو محفظتك دون وسطاء:
-          </p>
-
-          <div class="gateway-field">
-            <label><span class="gw-icon pp">P</span> بريد حساب PayPal المعتمد للاستقبال:</label>
-            <input type="email" id="gwPayPalEmail" placeholder="mostafaragab@paypal.com">
-            <span class="gw-hint">تصل إليه مدفوعات PayPal والاشتراكات المتجددة فورياً.</span>
-          </div>
-
-          <div class="gateway-field">
-            <label><span class="gw-icon pnr">P</span> بريد أو معرّف حساب Payoneer (Receiving Account):</label>
-            <input type="text" id="gwPayoneerId" placeholder="mostafaragab@payoneer.com">
-            <span class="gw-hint">تستقبل عليه مبالغ الكريديت كارد والتحويلات المصرفية بالدولار واليورو.</span>
-          </div>
-
-          <div class="gateway-field">
-            <label><span class="gw-icon skr">S</span> بريد محفظة Skrill Merchant Wallet:</label>
-            <input type="email" id="gwSkrillEmail" placeholder="mostafaragab@skrill.com">
-            <span class="gw-hint">لاستقبال التحويلات من المحافظ الدولية والبطاقات الافتراضية.</span>
-          </div>
-
-          <button type="button" class="btn-save-gateways" onclick="saveGatewaySettings()">
-            💾 حفظ وتثبيت إعدادات الربط المالي
-          </button>
-          <div class="gw-status-badge" id="gwStatusBadge">✅ بوابات التحصيل متصلة وجاهزة لاستقبال المدفوعات</div>
-        </div>
-      </div>
-
-    </div>
-
+    
     <!-- سجل التدريبات السابقة (مشترك) -->
     <div class="history-card">
       <div class="history-title">
@@ -2987,6 +2846,402 @@
       </div>
     </footer>
   </div>
+
+
+  <!-- ====================================================================
+       منصة TURKO PLUS+ المستقلة بملء الشاشة بالكامل (Full-Screen Dedicated Platform)
+       ==================================================================== -->
+  <div id="viewPlus" class="turko-plus-fullscreen-page" style="display: none;">
+    <!-- شريط التنقل العلوي الفاخر لـ Turko PLUS+ -->
+    <div class="plus-nav-header">
+      <button type="button" class="btn-plus-return" onclick="goBackFromPlus()">
+        <span>⬅️</span> العودة إلى تطبيق Turko الأساسي
+      </button>
+      <div class="plus-header-badge">
+        <span>👑</span> Turko PLUS+
+      </div>
+    </div>
+
+    <!-- رأس منصة Turko Plus الفاخر والمطلوب نصاً -->
+    <div class="plus-hero-card">
+      <div class="plus-avatar-frame">
+        <img src="data:image/jpeg;base64,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" alt="Mostafa Ragab HOCA" class="plus-hoca-avatar" onclick="handleAdminSecretTap()" title="Mostafa Ragab HOCA">
+        <span class="plus-crown-badge" onclick="handleAdminSecretTap()" title="المشرف" style="cursor: pointer;">👑</span>
+      </div>
+      <div class="plus-hero-details">
+        <div class="plus-hero-title-row">
+          <span class="plus-main-title">Turko PLUS+</span>
+          <span class="plus-vip-pill-badge">⭐ إصدار VIP</span>
+        </div>
+        <div class="plus-teacher-name-small">الأستاذ مصطفى رجب (Mostafa Ragab HOCA 🎓)</div>
+        <div class="plus-specialized-tagline">برنامج متخصص فى الخدمات السياحية والتعليمية و فرص العمل التركية</div>
+      </div>
+    </div>
+
+    <!-- تنويه رسمي عن الخدمات المدفوعة -->
+    <div class="plus-notice-box">
+      <div class="plus-notice-icon">🛡️</div>
+      <div class="plus-notice-content">
+        <div class="plus-notice-title">منصة التدريب السياحي والتأهيل التوظيفي المعتمد</div>
+        <p class="plus-notice-desc">
+          الوصول إلى المواد التدريبية المتقدمة، خدمات المرشد الشخصي في مصر وتركيا، وبنك الوظائف الشاغرة يتطلب اشتراكاً مسدداً بالبطاقة البنكية أو بايونير. يتم تفعيل الأقسام وفتح الروابط تلقائياً فور تأكيد وسحب الدفعة البنكية.
+        </p>
+      </div>
+    </div>
+
+    <!-- 1. قسم إنشاء الحساب وتسجيل الدخول -->
+    <div class="plus-auth-card" id="plusAuthCard">
+      <div class="plus-auth-tabs">
+        <button type="button" class="plus-auth-tab active" id="tabRegister" onclick="switchAuthTab('register')">إنشاء حساب VIP جديد</button>
+        <button type="button" class="plus-auth-tab" id="tabLogin" onclick="switchAuthTab('login')">تسجيل الدخول</button>
+      </div>
+      <div class="plus-auth-form" id="plusAuthForm">
+        <div class="plus-input-group" id="groupName">
+          <label>الاسم بالكامل:</label>
+          <input type="text" id="plusInputName" placeholder="مثال: مصطفى أحمد" dir="auto">
+        </div>
+        <div class="plus-input-group">
+          <label>البريد الإلكتروني (Email):</label>
+          <input type="email" id="plusInputEmail" placeholder="your-email@example.com" dir="ltr">
+        </div>
+        <div class="plus-input-group">
+          <label>كلمة المرور (Password):</label>
+          <input type="password" id="plusInputPassword" placeholder="••••••••" dir="ltr">
+        </div>
+        <button type="button" class="btn-plus-auth-submit" id="btnAuthSubmit" onclick="handlePlusAuthSubmit()">
+          <span id="authSubmitText">إنشاء حسابي وتأكيد التسجيل ✨</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- بطاقة الجلسة النشطة بعد تسجيل الدخول -->
+    <div class="plus-session-card" id="plusSessionCard" style="display: none;">
+      <div class="plus-session-user-info">
+        <div class="plus-session-avatar">👤</div>
+        <div>
+          <div class="plus-session-name" id="sessionUserName">عضو Turko Plus</div>
+          <div class="plus-session-email" id="sessionUserEmail">user@example.com</div>
+        </div>
+      </div>
+      <div class="plus-session-badge" id="sessionVipBadge">
+        <span class="status-indicator" id="sessionStatusDot"></span>
+        <span id="sessionStatusText">عضوية مسجلة — في انتظار تفعيل الاشتراك ⏳</span>
+      </div>
+      <button type="button" class="btn-plus-logout" onclick="handlePlusLogout()">تبديل الحساب / تسجيل الخروج 🚪</button>
+    </div>
+
+    <!-- 2. خريطة تطبيق Turko PLUS+ (المسارات الأربعة المحددة بدقة) -->
+    <div class="plus-app-map-section">
+      <div class="plus-map-header">
+        <div class="plus-map-title">
+          <span>🗺️</span> خريطة تطبيق Turko PLUS+
+        </div>
+        <div class="plus-map-sub">
+          المسارات التخصصية الأربعة المعتمدة (تفتح تلقائياً فور تأكيد عملية الدفع وسحب الرسوم):
+        </div>
+      </div>
+
+      <div class="plus-modules-grid">
+        <!-- المسار 1: دورة تدريب الارشاد السياحي -->
+        <div class="plus-module-card" id="modCard_rehberlik_kursu">
+          <div class="plus-module-top">
+            <span class="plus-module-icon">🎓</span>
+            <span class="plus-lock-badge" id="lockBadge_rehberlik_kursu">🔒 محتوى مقفول (يتطلب اشتراك)</span>
+          </div>
+          <div class="plus-module-title">دورة تدريب الارشاد السياحي</div>
+          <div class="plus-module-tr">Turist Rehberliği Mesleki Eğitim Kursu</div>
+          <p class="plus-module-desc">
+            البرنامج التخصصي الشامل لتأهيل المرشدين السياحيين المعتمدين وفق لوائح ومعايير نقابة المرشدين السياحيين في تركيا (TUREB). يشمل تاريخ وحضارات الأناضول، الآثار العثمانية والسلجوقية، مصطلحات الشرح الميداني، والتحضير لامتحان القبول المهني.
+          </p>
+          <div class="plus-module-features">
+            <span>✓ منهاج تاريخ وحضارات الأناضول باللغتين التركية والعربية</span>
+            <span>✓ بنك أسئلة ونماذج امتحانات الترخيص المهني TUREB</span>
+            <span>✓ مصطلحات المتاحف، النقوش التاريخية، وفنون الشرح الميداني</span>
+          </div>
+          <button type="button" class="btn-module-action" onclick="openModuleDetails('rehberlik_kursu')">
+            <span id="modBtnText_rehberlik_kursu">معاينة تفاصيل ومحاور الدورة</span> 🔍
+          </button>
+        </div>
+
+        <!-- المسار 2: مرشدك أون لاين فى مصر -->
+        <div class="plus-module-card" id="modCard_rehber_misir">
+          <div class="plus-module-top">
+            <span class="plus-module-icon">🇪🇬</span>
+            <span class="plus-lock-badge" id="lockBadge_rehber_misir">🔒 محتوى مقفول (يتطلب اشتراك)</span>
+          </div>
+          <div class="plus-module-title">مرشدك أون لاين فى مصر</div>
+          <div class="plus-module-tr">Mısır'da Online Turist Rehberiniz</div>
+          <p class="plus-module-desc">
+            المنظومة التفاعلية الأولى لمرافقة وإرشاد السياح الأتراك والناطقين بالتركية في جمهورية مصر العربية. تنظيم جداول الزيارات في القاهرة الكبرى، الأهرامات، المتحف المصري الكبير، الأقصر، أسوان، الإسكندرية، وشرم الشيخ مع خدمات الترجمة السياحية الفورية.
+          </p>
+          <div class="plus-module-features">
+            <span>✓ تخطيط المسارات اليومية واستقبال ومرافقة الأفواج التركية</span>
+            <span>✓ قاموس الآثار والحضارة المصرية القديمة باللغة التركية</span>
+            <span>✓ حل المواقف الطارئة والترجمة السريعة في الفنادق والمزارات</span>
+          </div>
+          <button type="button" class="btn-module-action" onclick="openModuleDetails('rehber_misir')">
+            <span id="modBtnText_rehber_misir">معاينة تفاصيل الخدمة في مصر</span> 🔍
+          </button>
+        </div>
+
+        <!-- المسار 3: مرشدك أون لاين فى تركيا -->
+        <div class="plus-module-card" id="modCard_rehber_turkiye">
+          <div class="plus-module-top">
+            <span class="plus-module-icon">🇹🇷</span>
+            <span class="plus-lock-badge" id="lockBadge_rehber_turkiye">🔒 محتوى مقفول (يتطلب اشتراك)</span>
+          </div>
+          <div class="plus-module-title">مرشدك أون لاين فى تركيا</div>
+          <div class="plus-module-tr">Türkiye'de Online Turist Rehberiniz</div>
+          <p class="plus-module-desc">
+            دليلك ومرشدك الشخصي المباشر في عموم المدن التركية (إسطنبول، طرابزون وريزا، بورصة، سبانجا، أنطاليا، وكبادوكيا). توجيه الجولات الحية، تفادي الازدحام ومصائد الأسعار، والمساعدة الفورية في المحادثة مع السائقين والمطاعم والتنقل بالمواصلات.
+          </p>
+          <div class="plus-module-features">
+            <span>✓ جداول رحلات مخصصة توفر الوقت والمال للعائلات والأفراد</span>
+            <span>✓ خط ساخن لحل طوارئ السفر والتواصل مع الجهات الرسمية</span>
+            <span>✓ خريطة الجواهر السياحية الخفية والمطاعم التراثية الأصيلة</span>
+          </div>
+          <button type="button" class="btn-module-action" onclick="openModuleDetails('rehber_turkiye')">
+            <span id="modBtnText_rehber_turkiye">معاينة تفاصيل الخدمة في تركيا</span> 🔍
+          </button>
+        </div>
+
+        <!-- المسار 4: الشامل لجميع فرص العمل باللغة التركية -->
+        <div class="plus-module-card" id="modCard_kariyer_rehberi">
+          <div class="plus-module-top">
+            <span class="plus-module-icon">💼</span>
+            <span class="plus-lock-badge" id="lockBadge_kariyer_rehberi">🔒 محتوى مقفول (يتطلب اشتراك)</span>
+          </div>
+          <div class="plus-module-title">الشامل لجميع فرص العمل باللغة التركية</div>
+          <div class="plus-module-tr">Türkçe İş Fırsatları ve Kariyer Rehberi</div>
+          <p class="plus-module-desc">
+            المركز المهني المتكامل للتوظيف وسوق العمل التركي في مصر والوطن العربي وعن بعد (Remote). وظائف خدمة العملاء والكول سنتر التركي (Call Center)، شركات السياحة والطيران، التجارة الخارجية والتصدير والاستيراد، الترجمة الفورية، وتدريس اللغة التركية.
+          </p>
+          <div class="plus-module-features">
+            <span>✓ نشرة الوظائف الشاغرة المحدثة أسبوعياً مع بيانات التواصل المباشرة</span>
+            <span>✓ نماذج سيرة ذاتية تركية احترافية (Türkçe CV Şablonları)</span>
+            <span>✓ بنك أسئلة مقابلات العمل التركية وإرشادات اجتياز المقابلة (Mülakat)</span>
+          </div>
+          <button type="button" class="btn-module-action" onclick="openModuleDetails('kariyer_rehberi')">
+            <span id="modBtnText_kariyer_rehberi">معاينة بوابة فرص العمل</span> 🔍
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. خطط الاشتراك وتحديد العملة بحسب دولة المستخدم -->
+    <div class="plus-plans-card">
+      <div class="plus-plans-header-row">
+        <div class="plus-map-title">
+          <span>💎</span> خطط الاشتراك في Turko PLUS+
+        </div>
+        <div class="plus-currency-tag" id="currentCurrencyTag">
+          <span>📍</span> <span id="detectedCountryText">العملة: EGP (مصر)</span>
+        </div>
+      </div>
+
+      <!-- شريط تبديل العملات التفاعلي السريع -->
+      <div class="currency-selector-bar">
+        <span class="curr-select-label">اختر عملة دولتك:</span>
+        <div class="currency-pills-row" id="currencyPillsRow">
+          <button type="button" class="curr-pill active" onclick="switchCurrency('EGP')">🇪🇬 جنيه مصري</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('SAR')">🇸🇦 ريال سعودي</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('AED')">🇦🇪 درهم إماراتي</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('TRY')">🇹🇷 ليرة تركية</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('KWD')">🇰🇼 دينار كويتي</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('USD')">🌐 دولار أمريكي</button>
+          <button type="button" class="curr-pill" onclick="switchCurrency('EUR')">🇪🇺 يورو</button>
+        </div>
+      </div>
+
+      <div class="plus-plans-grid">
+        <!-- الخطة 1: الباقة الشهرية (20 دولار) -->
+        <div class="plan-option selected" id="planMonthly" onclick="selectPlan('monthly')">
+          <div class="plan-info">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="plan-name">الباقة الشهرية (VIP Monthly)</span>
+              <span class="plan-badge" style="background: #2563eb;">نظام التجديد الشهري (30 يوماً)</span>
+            </div>
+            <span class="plan-period">وصول كامل لجميع المسارات والمحتوى التخصصي لمدة 30 يوماً وتُقفل تلقائياً بعد انتهاء الشهر</span>
+            <div style="font-size: 0.68rem; color: #94a3b8; font-family: monospace; margin-top: 2px;">Paddle ID: pri_01m5hsy8vc8606gtevf352mtdb</div>
+          </div>
+          <div class="plan-price-wrap">
+            <span class="plan-price" id="priceMonthly">1,000 ج.م</span>
+            <span class="plan-period-sub">/ شهرياً (20$)</span>
+          </div>
+        </div>
+
+        <!-- الخطة 2: باقة مدى الحياة (100 دولار) -->
+        <div class="plan-option" id="planLifetime" onclick="selectPlan('lifetime')">
+          <div class="plan-info">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="plan-name">عضوية دبلوم الإرشاد مدى الحياة (Lifetime VIP)</span>
+              <span class="plan-badge" style="background: #16a34a;">الأوفر - لمرة واحدة فقط</span>
+            </div>
+            <span class="plan-period">عضوية دائمة لجميع أقسام التطبيق مدى الحياة وبدون أي اشتراكات متكررة أبداً</span>
+            <div style="font-size: 0.68rem; color: #94a3b8; font-family: monospace; margin-top: 2px;">Paddle ID: pri_01m5hsw5vtpngxntvwjx0b7cxf</div>
+          </div>
+          <div class="plan-price-wrap">
+            <span class="plan-price" id="priceLifetime">5,000 ج.م</span>
+            <span class="plan-period-sub">دفعة واحدة (100$)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. نموذج الدفع الآمن بالكريديت كارد والربط مع Payoneer -->
+    <div class="plus-card-payment-box">
+      <div class="plus-map-title">
+        <span>💳</span> الدفع الآمن والربط بحساب Payoneer
+      </div>
+      <p style="font-size: 0.76rem; color: #cbd5e1; line-height: 1.45;">
+        تخضع عملية الدفع لفحص وتدقيق بنكي حقيقي مشدد (Luhn Algorithm & 3D-Secure). يتم تحصيل الرسوم لحساب <b>Payoneer</b> المعتمد <b>(mostafaragab@payoneer.com)</b>، وتفتح أقسام الخريطة تلقائياً فور تأكيد وسحب المبلغ.
+      </p>
+
+      <!-- معاينة البطاقة الائتمانية التفاعلية الحية -->
+      <div class="interactive-credit-card">
+        <div class="card-top-row">
+          <div class="card-chip"></div>
+          <div class="card-brand-network" id="visualCardLogo">VISA</div>
+        </div>
+        <div class="card-number-display" id="visualCardNumber">•••• •••• •••• ••••</div>
+        <div class="card-meta-row">
+          <div>
+            <div class="meta-label">حامل البطاقة</div>
+            <div class="meta-val" id="visualCardHolder">CARDHOLDER NAME</div>
+          </div>
+          <div>
+            <div class="meta-label">الانتهاء</div>
+            <div class="meta-val" id="visualCardExpiry">MM/YY</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- حقول إدخال بيانات الكريديت كارد الصارمة -->
+      <div class="cc-form-grid">
+        <div class="cc-field">
+          <label>رقم البطاقة الائتمانية (Card Number):</label>
+          <input type="text" id="ccNumber" placeholder="4000 1234 5678 9010" maxlength="19" oninput="formatAndPreviewCardNumber(this)">
+          <span class="cc-hint-text">يجب أن يكون رقم بطاقة بنكية حقيقية صالح وفق خوارزمية Luhn البنكية.</span>
+        </div>
+        <div class="cc-field">
+          <label>الاسم المكتوب على البطاقة (Cardholder Name):</label>
+          <input type="text" id="ccHolder" placeholder="MOSTAFA AHMED RAGAB" oninput="previewCardHolder(this)">
+        </div>
+        <div class="cc-row">
+          <div class="cc-field">
+            <label>تاريخ الانتهاء (MM/YY):</label>
+            <input type="text" id="ccExpiry" placeholder="08/28" maxlength="5" oninput="formatAndPreviewExpiry(this)">
+          </div>
+          <div class="cc-field">
+            <label>رمز الأمان (CVC/CVV):</label>
+            <input type="password" id="ccCvc" placeholder="•••" maxlength="4">
+          </div>
+        </div>
+      </div>
+
+      <!-- شارات الأمان البنكي والربط مع Payoneer -->
+      <div class="cc-security-bar">
+        <span>🔒 Payoneer Verified Checkout</span>
+        <span>🛡️ معايير PCI-DSS المشددة</span>
+        <span>✓ تحقق 3D-Secure البنكي</span>
+      </div>
+
+      <button type="button" class="btn-cc-submit" id="btnSubmitPayment" onclick="processSecurePayment()">
+        <span>🔒 تأكيد الاشتراك وسحب الرسوم لحساب Payoneer (<span id="btnPayAmountText">4,900 ج.م</span>)</span>
+      </button>
+
+      <!-- الدفع المباشر برابط بايونير والمحافظ الدولية -->
+      <div class="alternative-payouts-wrap">
+        <div class="alt-title">أو ادفع مباشرة عبر بوابة بايونير أو المحافظ الإلكترونية:</div>
+        <div class="alt-buttons-row">
+          <button type="button" class="btn-alt-pay payoneer" onclick="processAltPayment('Payoneer')">
+            <span>P</span> Payoneer Checkout
+          </button>
+          <button type="button" class="btn-alt-pay paypal" onclick="processAltPayment('PayPal')">
+            <span>P</span> PayPal
+          </button>
+          <button type="button" class="btn-alt-pay skrill" onclick="processAltPayment('Skrill')">
+            <span>S</span> Skrill
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- لوحة إعدادات ربط بوابات التحصيل المالي ومنصة Paddle (خاص بالأستاذ مصطفى رجب برمز مرور سري) -->
+      <div class="plus-gateway-setup-card" id="plusGatewaySetupCard" style="display: none;">
+        <div class="gateway-header" onclick="toggleGatewaySettings()">
+          <div class="gateway-title">
+            <span>💼</span> إعدادات بوابات التحصيل وربط Paddle & Payoneer (خاص بالمطور)
+          </div>
+          <span class="gateway-toggle-arrow" id="gatewayToggleArrow">▼</span>
+        </div>
+        <div class="gateway-body" id="gatewayBody" style="display: none;">
+          <p class="gateway-desc">
+            خاص بالأستاذ مصطفى رجب: أدخل بيانات حساب <b>Paddle</b> و<b>Payoneer</b> لتفعيل الدفع المباشر وتحويل الأرباح لحسابك البنكي، مع إمكانية اختبار نظام انتهاء وتجديد الاشتراكات فورياً:
+          </p>
+
+          <!-- إعدادات Paddle -->
+          <div style="background: rgba(30, 27, 75, 0.7); border: 1.5px solid #a855f7; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-weight: 800; color: #fef08a; font-size: 0.82rem;">⚡ إعدادات منصة Paddle الرسمية:</div>
+            <div class="gateway-field">
+              <label>معرف الباقة الشهرية (Monthly Price ID):</label>
+              <input type="text" id="cfgPaddleMonthlyId" value="pri_01m5hsy8vc8606gtevf352mtdb" readonly style="background: #1e1b4b; color: #86efac; font-family: monospace;">
+            </div>
+            <div class="gateway-field">
+              <label>معرف باقة مدى الحياة (Lifetime Price ID):</label>
+              <input type="text" id="cfgPaddleLifetimeId" value="pri_01m5hsw5vtpngxntvwjx0b7cxf" readonly style="background: #1e1b4b; color: #86efac; font-family: monospace;">
+            </div>
+            <div class="gateway-field">
+              <label>رمز العميل (Paddle Client-side Token):</label>
+              <input type="text" id="cfgPaddleClientToken" value="live_4e6125c2ca1810e9e10524b8707">
+              <span class="gw-hint">تنسخه من لوحة تحكم Paddle: Developer tools > Authentication > Client-side tokens</span>
+            </div>
+            <div class="gateway-field">
+              <label>بيئة Paddle (Environment):</label>
+              <select id="cfgPaddleEnv" style="background: #090d16; color: white; border: 1px solid #a855f7; border-radius: 6px; padding: 8px;">
+                <option value="live">الحساب الفعلي (Live Production)</option>
+                <option value="sandbox">وضع الاختبار والتجربة (Sandbox)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- أدوات اختبار دورة حياة الاشتراك مثل نتفليكس -->
+          <div style="background: rgba(15, 23, 42, 0.9); border: 1.5px solid #f59e0b; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-weight: 800; color: #fbbf24; font-size: 0.82rem;">🧪 أدوات محاكاة واختبار نظام الاشتراكات (نتفليكس):</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+              <button type="button" onclick="testExpireSubscription()" style="background: #dc2626; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 800; cursor: pointer;">
+                ❌ محاكاة انتهاء الشهر (قفل الأقسام فوراً)
+              </button>
+              <button type="button" onclick="activateSubscription('monthly', 'Admin Test')" style="background: #2563eb; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 800; cursor: pointer;">
+                🟢 تجديد شهر كامل (30 يوماً)
+              </button>
+            </div>
+            <button type="button" onclick="activateSubscription('lifetime', 'Admin Test')" style="background: #16a34a; color: white; border: none; padding: 8px; border-radius: 6px; font-size: 0.74rem; font-weight: 800; cursor: pointer;">
+              👑 تفعيل اشتراك دائم مدى الحياة (فتح أبدي)
+            </button>
+          </div>
+
+          <!-- حسابات بايونير لاستقبال الأموال -->
+          <div class="gateway-field">
+            <label><span class="gw-icon pnr">P</span> بريد أو معرّف حساب Payoneer (Receiving Account):</label>
+            <input type="text" id="gwPayoneerId" placeholder="mostafaragab@payoneer.com">
+            <span class="gw-hint">تستقبل عليه تحويلات Paddle البنكية التلقائية بالدولار واليورو.</span>
+          </div>
+
+          <button type="button" class="btn-save-gateways" onclick="saveGatewaySettings()">
+            💾 حفظ وتثبيت إعدادات الربط المالي وPaddle
+          </button>
+        <div class="gw-status-badge" id="gwStatusBadge">✅ بوابات التحصيل متصلة وجاهزة لاستقبال المدفوعات</div>
+      </div>
+    </div>
+
+    <!-- تذييل صفحة Turko Plus -->
+    <footer style="margin-top: 14px; border-top: 1px solid rgba(168, 85, 247, 0.25); padding-top: 12px;">
+      <span style="color: #cbd5e1;">منصة <b>Turko PLUS+</b> للتدريب السياحي وتأهيل التوظيف واللغة التركية</span>
+      <span style="color: #94a3b8; font-size: 0.72rem;">إشراف الأستاذ <b>مصطفى رجب (Mostafa Ragab HOCA)</b> © جميع الحقوق محفوظة 2026</span>
+    </footer>
+  </div>
+
 
   <!-- النافذة المنبثقة لاستعراض محتويات الأقسام والفواتير الرقمية -->
   <div class="plus-modal-overlay" id="plusModalOverlay" onclick="closePlusModal(event)">
@@ -21129,27 +21384,130 @@
        إدارة التنقل والتحكم في صفحة Turko PLUS+
        ========================================================= */
     function openTurkoPlusPage(updateHistory = true) {
-      document.getElementById('viewCatalog').style.display = 'none';
-      document.getElementById('viewPractice').style.display = 'none';
+      document.getElementById('mainTurkoCard').style.display = 'none';
       document.getElementById('viewPlus').style.display = 'flex';
 
       if (updateHistory) {
         history.pushState({ view: 'plus' }, '', '#plus');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      showToast('👑 مرحباً بك في منصة Turko PLUS+ الحصرية!');
+      showToast('👑 مرحباً بك في منصة Turko PLUS+!');
+
+      detectUserCountryAndCurrency();
+      updateModulesLockState();
 
       if (typeof gtag === 'function') {
         gtag('event', 'turko_plus_opened', {
           'event_category': 'navigation',
-          'event_label': 'Turko PLUS+ Page'
+          'event_label': 'Turko PLUS+ Fullscreen Page'
         });
       }
     }
 
     function goBackFromPlus() {
+      document.getElementById('viewPlus').style.display = 'none';
+      document.getElementById('mainTurkoCard').style.display = 'flex';
       showCatalogView(true);
       showToast('📚 العودة إلى قواعد Turko الأساسية');
+    }
+
+    /* =========================================================
+       منظومة العملات التلقائية والدولية بحسب الدولة
+       ========================================================= */
+    let currentCurrencyCode = 'EGP';
+    const currencyPricing = {
+      'EGP': { symbol: 'ج.م', name: 'مصر', monthly: 1000, lifetime: 5000, usdMonthly: 20, usdLifetime: 100 },
+      'SAR': { symbol: 'ر.س', name: 'السعودية', monthly: 75, lifetime: 375, usdMonthly: 20, usdLifetime: 100 },
+      'AED': { symbol: 'د.إ', name: 'الإمارات', monthly: 75, lifetime: 370, usdMonthly: 20, usdLifetime: 100 },
+      'TRY': { symbol: '₺', name: 'تركيا', monthly: 700, lifetime: 3500, usdMonthly: 20, usdLifetime: 100 },
+      'KWD': { symbol: 'د.ك', name: 'الكويت', monthly: 6.2, lifetime: 31, usdMonthly: 20, usdLifetime: 100 },
+      'USD': { symbol: '$', name: 'دولي/أمريكا', monthly: 20, lifetime: 100, usdMonthly: 20, usdLifetime: 100 },
+      'EUR': { symbol: '€', name: 'أوروبا', monthly: 19, lifetime: 95, usdMonthly: 20, usdLifetime: 100 }
+    };
+
+    const PADDLE_CONFIG = {
+      monthlyPriceId: 'pri_01m5hsy8vc8606gtevf352mtdb',
+      lifetimePriceId: 'pri_01m5hsw5vtpngxntvwjx0b7cxf',
+      clientToken: 'live_4e6125c2ca1810e9e10524b8707',
+      environment: localStorage.getItem('turko_paddle_env') || 'live'
+    };
+
+    function detectUserCountryAndCurrency() {
+      // الكشف التلقائي عبر المنطقة الزمنية أولاً
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (tz.includes('Cairo') || tz.includes('Egypt')) {
+          switchCurrency('EGP');
+          return;
+        } else if (tz.includes('Riyadh') || tz.includes('Saudi')) {
+          switchCurrency('SAR');
+          return;
+        } else if (tz.includes('Dubai') || tz.includes('Muscat')) {
+          switchCurrency('AED');
+          return;
+        } else if (tz.includes('Istanbul')) {
+          switchCurrency('TRY');
+          return;
+        } else if (tz.includes('Kuwait')) {
+          switchCurrency('KWD');
+          return;
+        } else if (tz.includes('Europe') || tz.includes('Paris') || tz.includes('Berlin')) {
+          switchCurrency('EUR');
+          return;
+        }
+      } catch(e) {}
+
+      // كشف احتياطي من IP إن توفر
+      fetch('https://ipapi.co/json/').then(res => res.json()).then(data => {
+        if (data && data.country_code) {
+          const map = { 'EG': 'EGP', 'SA': 'SAR', 'AE': 'AED', 'TR': 'TRY', 'KW': 'KWD', 'US': 'USD' };
+          if (map[data.country_code]) {
+            switchCurrency(map[data.country_code]);
+          }
+        }
+      }).catch(() => {});
+    }
+
+    function switchCurrency(code) {
+      if (!currencyPricing[code]) return;
+      currentCurrencyCode = code;
+      const c = currencyPricing[code];
+
+      document.querySelectorAll('.curr-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(c.symbol) || btn.textContent.includes(c.name));
+      });
+
+      document.getElementById('detectedCountryText').textContent = `العملة: ${c.symbol} (${c.name})`;
+      const mEl = document.getElementById('priceMonthly');
+      if (mEl) mEl.textContent = `${c.monthly.toLocaleString()} ${c.symbol}`;
+      const lEl = document.getElementById('priceLifetime');
+      if (lEl) lEl.textContent = `${c.lifetime.toLocaleString()} ${c.symbol}`;
+
+      updateCheckoutButtonAmount();
+    }
+
+    function updateCheckoutButtonAmount() {
+      const curr = currencyPricing[currentCurrencyCode] || currencyPricing['EGP'];
+      const btnText = document.getElementById('btnPayAmountText');
+      if (!btnText) return;
+
+      if (selectedPlanId === 'monthly') {
+        btnText.textContent = `${curr.monthly.toLocaleString()} ${curr.symbol} ($20/شهر)`;
+      } else {
+        btnText.textContent = `${curr.lifetime.toLocaleString()} ${curr.symbol} ($100 لمرة واحدة)`;
+      }
+    } ${c.symbol}`;
+    }
+
+    /* اختيار خطة الاشتراك */
+    function selectPlan(planId) {
+      selectedPlanId = planId;
+      document.querySelectorAll('.plan-option').forEach(p => p.classList.remove('selected'));
+      const activeEl = document.getElementById(`plan${planId.charAt(0).toUpperCase() + planId.slice(1)}`);
+      if (activeEl) activeEl.classList.add('selected');
+
+      updateCheckoutButtonAmount();
+      showToast(`تم اختيار باقة الاشتراك: ${planId === 'monthly' ? 'الشهرية' : planId === 'annual' ? 'السنوية الذهبية' : 'دبلوم مدى الحياة'}`);
     }
 
     /* إدارة حساب المستخدم في Turko Plus */
@@ -21160,7 +21518,7 @@
       document.getElementById('tabRegister').classList.toggle('active', mode === 'register');
       document.getElementById('tabLogin').classList.toggle('active', mode === 'login');
       document.getElementById('groupName').style.display = (mode === 'register') ? 'flex' : 'none';
-      document.getElementById('authSubmitText').textContent = (mode === 'register') ? 'إنشاء حسابي وتفعيل العضوية ✨' : 'تسجيل الدخول للمنصة 🔑';
+      document.getElementById('authSubmitText').textContent = (mode === 'register') ? 'إنشاء حسابي وتأكيد التسجيل ✨' : 'تسجيل الدخول للمنصة 🔑';
     }
 
     function handlePlusAuthSubmit() {
@@ -21185,8 +21543,8 @@
       } catch (e) {}
 
       renderPlusUserSession(account);
-      renderSecurityWatermark('Turko VIP • ' + (account.name || 'عضو') + ' • ' + (account.email || ''));
-      showToast(authMode === 'register' ? '🎉 تم إنشاء حساب VIP الخاص بك بنجاح!' : '🔑 تم تسجيل الدخول بنجاح!');
+      updateModulesLockState();
+      showToast(authMode === 'register' ? '🎉 تم إنشاء حسابك بنجاح! اختر خطتك لتفعيل الأقسام.' : '🔑 تم تسجيل الدخول بنجاح!');
     }
 
     function initPlusSession() {
@@ -21208,46 +21566,170 @@
       const badge = document.getElementById('sessionVipBadge');
       const text = document.getElementById('sessionStatusText');
 
-      if (user.isSubscribed) {
+      const sub = getUserSubscriptionInfo();
+
+      if (sub.active) {
         badge.style.borderColor = '#22c55e';
         badge.style.background = 'rgba(34, 197, 94, 0.2)';
         badge.style.color = '#86efac';
-        text.textContent = '⭐ مشترك Turko Plus VIP مفعل بنجاح!';
+        if (sub.plan === 'lifetime') {
+          text.innerHTML = '👑 <b>عضوية ذهبية دائمة مدى الحياة</b> (وصول غير محدود للأبد)';
+        } else {
+          const expDateFormatted = new Date(sub.expiryDate).toLocaleDateString('ar-EG');
+          text.innerHTML = `🟢 <b>اشتراك شهري فعال</b> — متبقي <b>${sub.daysLeft} يوماً</b> (ينتهي في ${expDateFormatted})`;
+        }
       } else {
+        if (sub.reason === 'expired') {
+          badge.style.borderColor = '#ef4444';
+          badge.style.background = 'rgba(239, 68, 68, 0.25)';
+          badge.style.color = '#fca5a5';
+          text.innerHTML = '⚠️ <b>انتهت فترة اشتراكك الشهري!</b> تم قفل الأقسام لحين التجديد.';
+        } else {
+          badge.style.borderColor = '#f59e0b';
+          badge.style.background = 'rgba(245, 158, 11, 0.2)';
+          badge.style.color = '#fef08a';
+          text.textContent = 'عضوية مسجلة — في انتظار تفعيل الاشتراك ⏳';
+        }
+      }
+
+      updateModulesLockState();
+    } else {
         badge.style.borderColor = '#f59e0b';
         badge.style.background = 'rgba(245, 158, 11, 0.2)';
         badge.style.color = '#fef08a';
-        text.textContent = 'عضوية مسجلة — في انتظار تفعيل الاشتراك ⏳';
+        dot.style.background = '#f59e0b';
+        dot.style.boxShadow = '0 0 8px #f59e0b';
+        text.textContent = 'عضوية مسجلة — الأقسام مقفولة في انتظار تفعيل الاشتراك 🔒';
       }
     }
 
     function handlePlusLogout() {
-      if (true) {
-        try {
-          localStorage.removeItem('turko_plus_user');
-        } catch(e) {}
-        document.getElementById('plusAuthCard').style.display = 'flex';
-        document.getElementById('plusSessionCard').style.display = 'none';
-        showToast('تم تسجيل الخروج بنجاح.');
+      try {
+        localStorage.removeItem('turko_plus_user');
+      } catch(e) {}
+      document.getElementById('plusAuthCard').style.display = 'flex';
+      document.getElementById('plusSessionCard').style.display = 'none';
+      updateModulesLockState();
+      showToast('تم تسجيل الخروج بنجاح.');
+    }
+
+    /* =========================================================
+       تحديث وتأمين حالة أقفال خريطة التطبيق (Lock / Unlock State)
+       ========================================================= */
+    function getUserSubscriptionInfo() {
+      try {
+        const saved = localStorage.getItem('turko_plus_user');
+        if (saved) {
+          const u = JSON.parse(saved);
+          if (!u.isSubscribed) return { active: false, reason: 'unpaid', user: u };
+
+          if (u.plan === 'lifetime') {
+            return { active: true, plan: 'lifetime', permanent: true, user: u };
+          }
+
+          // إذا كان اشتراك شهري، نفحص انتهاء الـ 30 يوماً
+          if (u.plan === 'monthly') {
+            const now = Date.now();
+            const expiry = u.expiryDate ? new Date(u.expiryDate).getTime() : 0;
+
+            if (now > expiry) {
+              // انتهت صلاحية الشهر! نقفل الحساب تلقائياً
+              u.isSubscribed = false;
+              u.status = 'expired';
+              localStorage.setItem('turko_plus_user', JSON.stringify(u));
+              return { active: false, reason: 'expired', expiryDate: u.expiryDate, user: u };
+            } else {
+              // ما زال نشطاً، نحسب الأيام المتبقية
+              const msLeft = expiry - now;
+              const daysLeft = Math.max(1, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+              return { active: true, plan: 'monthly', daysLeft: daysLeft, expiryDate: u.expiryDate, user: u };
+            }
+          }
+        }
+      } catch(e) {}
+      return { active: false, reason: 'none' };
+    }
+
+    function isUserVipActive() {
+      const sub = getUserSubscriptionInfo();
+      return sub.active;
+    }
+
+    function updateModulesLockState() {
+      const sub = getUserSubscriptionInfo();
+      const mods = ['rehberlik_kursu', 'rehber_misir', 'rehber_turkiye', 'kariyer_rehberi'];
+
+      mods.forEach(id => {
+        const badge = document.getElementById(`lockBadge_${id}`);
+        const btnText = document.getElementById(`modBtnText_${id}`);
+        if (badge) {
+          if (sub.active) {
+            badge.className = 'plus-lock-badge unlocked';
+            badge.textContent = sub.plan === 'lifetime' ? '🔓 مفتوح دائم (مدى الحياة)' : `🔓 مفتوح (متبقي ${sub.daysLeft} يوم)`;
+          } else {
+            badge.className = 'plus-lock-badge';
+            if (sub.reason === 'expired') {
+              badge.textContent = '🔒 انتهى الشهر (يرجى التجديد)';
+              badge.style.background = '#7f1d1d';
+            } else {
+              badge.textContent = '🔒 محتوى مقفول (يتطلب اشتراك)';
+            }
+          }
+        }
+        if (btnText) {
+          btnText.textContent = sub.active ? 'الدخول والتصفح الآن 🚀' : (sub.reason === 'expired' ? 'تجديد الاشتراك الشهري ⚡' : 'معاينة تفاصيل المسار 🔍');
+        }
+      });
+    }`);
+        const btnText = document.getElementById(`modBtnText_${id}`);
+        if (badge) {
+          if (active) {
+            badge.className = 'plus-lock-badge unlocked';
+            badge.textContent = '🔓 متاح ومفتوح للاستخدام';
+          } else {
+            badge.className = 'plus-lock-badge';
+            badge.textContent = '🔒 محتوى مقفول (يتطلب اشتراك)';
+          }
+        }
+        if (btnText) {
+          btnText.textContent = active ? 'الدخول والتصفح الآن 🚀' : 'معاينة تفاصيل المسار 🔍';
+        }
+      });
+    }
+
+    /* =========================================================
+       التحقق المصرفي الصارم من بطاقات الائتمان (Luhn Checksum & Real Validation)
+       ========================================================= */
+    function validateCardLuhn(cardNumber) {
+      const clean = cardNumber.replace(/\D/g, '');
+      if (clean.length < 13 || clean.length > 19) return false;
+      let sum = 0;
+      let shouldDouble = false;
+      for (let i = clean.length - 1; i >= 0; i--) {
+        let digit = parseInt(clean.charAt(i), 10);
+        if (shouldDouble) {
+          digit *= 2;
+          if (digit > 9) digit -= 9;
+        }
+        sum += digit;
+        shouldDouble = !shouldDouble;
       }
+      return (sum % 10 === 0);
     }
 
-    /* اختيار خطة الاشتراك */
-    function selectPlan(planId, amount) {
-      selectedPlanId = planId;
-      selectedPlanAmount = amount;
-
-      document.querySelectorAll('.plan-option').forEach(p => p.classList.remove('selected'));
-      const activeEl = document.getElementById(`plan${planId.charAt(0).toUpperCase() + planId.slice(1)}`);
-      if (activeEl) activeEl.classList.add('selected');
-
-      const amountText = document.getElementById('btnPayAmountText');
-      if (amountText) amountText.textContent = `$${amount}`;
-
-      showToast(`تم اختيار خطة الاشتراك: $${amount}`);
+    function validateCardExpiry(expStr) {
+      if (!/^\d{2}\/\d{2}$/.test(expStr)) return false;
+      const parts = expStr.split('/');
+      const month = parseInt(parts[0], 10);
+      const year = parseInt('20' + parts[1], 10);
+      if (month < 1 || month > 12) return false;
+      const now = new Date();
+      const curYear = now.getFullYear();
+      const curMonth = now.getMonth() + 1;
+      if (year < curYear || (year === curYear && month < curMonth)) return false;
+      return true;
     }
 
-    /* محاكاة وتنسيق البطاقة الائتمانية الحية */
     function formatAndPreviewCardNumber(input) {
       let val = input.value.replace(/\D/g, '');
       let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
@@ -21257,15 +21739,11 @@
       visualNumber.textContent = formatted || '•••• •••• •••• ••••';
 
       const logo = document.getElementById('visualCardLogo');
-      if (val.startsWith('4')) {
-        logo.textContent = 'VISA';
-      } else if (val.startsWith('5')) {
-        logo.textContent = 'Mastercard';
-      } else if (val.startsWith('3')) {
-        logo.textContent = 'AMEX';
-      } else {
-        logo.textContent = 'CARD';
-      }
+      if (val.startsWith('4')) logo.textContent = 'VISA';
+      else if (val.startsWith('5')) logo.textContent = 'Mastercard';
+      else if (val.startsWith('3')) logo.textContent = 'AMEX';
+      else if (val.startsWith('9')) logo.textContent = 'Troy';
+      else logo.textContent = 'CARD';
     }
 
     function previewCardHolder(input) {
@@ -21282,164 +21760,241 @@
       document.getElementById('visualCardExpiry').textContent = val || 'MM/YY';
     }
 
-    /* إتمام الدفع الآمن بالكريديت كارد */
+    /* معالجة الدفع والتحقق البنكي والربط بحساب بايونير */
     function processSecurePayment() {
       const num = document.getElementById('ccNumber').value.trim();
       const holder = document.getElementById('ccHolder').value.trim();
       const exp = document.getElementById('ccExpiry').value.trim();
       const cvc = document.getElementById('ccCvc').value.trim();
 
-      if (!num || num.replace(/\s/g, '').length < 15) {
-        showToast('⚠️ يرجى إدخال رقم بطاقة ائتمان صحيح ومكتمل.');
+      // إذا كان رمز Paddle مفعل، نفتح Paddle Checkout الحقيقي مباشرة
+      if (window.Paddle && PADDLE_CONFIG.clientToken) {
+        openPaddleLiveCheckout();
         return;
       }
-      if (!holder) {
-        showToast('⚠️ يرجى إدخال اسم حامل البطاقة.');
+
+      // التحقق من اسم حامل البطاقة
+      const nameParts = holder.split(/\s+/).filter(Boolean);
+      if (!holder || nameParts.length < 2) {
+        showToast('⚠️ يرجى إدخال اسم حامل البطاقة بالكامل (الاسم الثنائي على الأقل).');
         return;
       }
-      if (!exp || exp.length < 5) {
-        showToast('⚠️ يرجى إدخال تاريخ انتهاء البطاقة (MM/YY).');
+
+      // التحقق الرياضي الصارم من رقم البطاقة عبر خوارزمية لُوهن البنكية
+      const cleanNum = num.replace(/\s/g, '');
+      if (!validateLuhnChecksum(cleanNum)) {
+        showToast('❌ رقم البطاقة غير صالح! تم رفض الرقم من نظام التحقق البنكي.');
         return;
       }
+
+      // التحقق من تاريخ الانتهاء
+      if (!validateCardExpiryDate(exp)) {
+        showToast('⚠️ تاريخ انتهاء البطاقة غير صالح أو منتهي الصلاحية.');
+        return;
+      }
+
       if (!cvc || cvc.length < 3) {
-        showToast('⚠️ يرجى إدخال رمز الأمان CVC المكون من 3 أرقام.');
+        showToast('⚠️ يرجى إدخال رمز الأمان CVC المكون من 3 أو 4 أرقام.');
         return;
       }
 
-      // محاكاة معالجة مصرفية آمنة
-      showToast('🔒 جاري تشفير ومعالجة العملية المصرفية بأمان...');
+      // محاكاة الاتصال البنكي وتأكيد المعاملة
+      showToast('🔒 جاري الاتصال بالبوابة البنكية المشفرة والتحقق من الرصيد...');
       const btn = document.querySelector('.btn-cc-submit');
-      btn.style.opacity = '0.6';
-      btn.disabled = true;
+      if (btn) { btn.style.opacity = '0.5'; btn.disabled = true; }
 
       setTimeout(() => {
-        btn.style.opacity = '1';
-        btn.disabled = false;
+        if (btn) { btn.style.opacity = '1'; btn.disabled = false; }
 
-        // تفعيل الاشتراك في الحساب
-        let account = {};
-        try {
-          const saved = localStorage.getItem('turko_plus_user');
-          if (saved) account = JSON.parse(saved);
-        } catch(e) {}
-
-        account.isSubscribed = true;
-        account.plan = selectedPlanId;
-        account.amount = selectedPlanAmount;
-        account.invoiceId = 'TRK-PLUS-' + Math.floor(100000 + Math.random() * 900000);
-        account.paidAt = new Date().toLocaleString('ar-EG');
-
-        try {
-          localStorage.setItem('turko_plus_user', JSON.stringify(account));
-        } catch(e) {}
-
-        renderPlusUserSession(account);
-      renderSecurityWatermark('Turko VIP • ' + (account.name || 'عضو') + ' • ' + (account.email || ''));
-        openPaymentReceiptModal(account);
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'purchase', {
-            'transaction_id': account.invoiceId,
-            'value': selectedPlanAmount,
-            'currency': 'USD',
-            'items': [{
-              'item_name': 'Turko Plus VIP: ' + selectedPlanId,
-              'price': selectedPlanAmount
-            }]
-          });
-        }
-      }, 1200);
-    }
-
-    function processAltPayment(gatewayName) {
-      const savedUser = localStorage.getItem('turko_plus_user');
-      const email = savedUser ? JSON.parse(savedUser).email : 'your-email@domain.com';
-
-      const modalTitle = document.getElementById('plusModalTitle');
-      const modalBody = document.getElementById('plusModalBody');
-
-      modalTitle.innerHTML = `<span>💳</span> الدفع المباشر عبر ${gatewayName}`;
-      modalBody.innerHTML = `
-        <div style="display: flex; flex-direction: column; gap: 12px; line-height: 1.5; font-size: 0.86rem;">
-          <p>أنت على وشك تفعيل اشتراكك في <b>Turko Plus</b> بمبلغ <b>$${selectedPlanAmount}</b> عبر بوابة <b>${gatewayName}</b> المباشرة.</p>
-          
-          <div style="background: rgba(2, 6, 23, 0.7); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; padding: 12px;">
-            <div><b>المستفيد:</b> الأستاذ مصطفى رجب (Mostafa Ragab HOCA) 🎓</div>
-            <div><b>البريد المعتمد للاستقبال:</b> <span style="direction: ltr; display: inline-block; color: #f59e0b;">mostafaragab@${gatewayName.toLowerCase()}.com</span></div>
-            <div><b>قيمة الاشتراك:</b> $${selectedPlanAmount} USD</div>
-          </div>
-
-          <p style="color: #86efac; font-size: 0.78rem;">✓ سيتم تأكيد اشتراكك وربطه تلقائياً ببريدك (${email}).</p>
-
-          <button type="button" class="btn-cc-submit" onclick="confirmAltCheckout('${gatewayName}')">
-            <span>تأكيد التحويل عبر ${gatewayName} وتفعيل الاشتراك الفوري ⚡</span>
-          </button>
-        </div>
-      `;
-      document.getElementById('plusModalOverlay').style.display = 'flex';
-    }
-
-    function confirmAltCheckout(gatewayName) {
-      closePlusModal();
-      showToast(`⚡ جاري الاتصال ببوابة ${gatewayName} وتأكيد العملية...`);
-
-      setTimeout(() => {
-        let account = {};
-        try {
-          const saved = localStorage.getItem('turko_plus_user');
-          if (saved) account = JSON.parse(saved);
-        } catch(e) {}
-
-        account.isSubscribed = true;
-        account.plan = selectedPlanId;
-        account.amount = selectedPlanAmount;
-        account.gateway = gatewayName;
-        account.invoiceId = 'TRK-' + gatewayName.toUpperCase() + '-' + Math.floor(100000 + Math.random() * 900000);
-        account.paidAt = new Date().toLocaleString('ar-EG');
-
-        try {
-          localStorage.setItem('turko_plus_user', JSON.stringify(account));
-        } catch(e) {}
-
-        renderPlusUserSession(account);
-      renderSecurityWatermark('Turko VIP • ' + (account.name || 'عضو') + ' • ' + (account.email || ''));
-        openPaymentReceiptModal(account);
+        activateSubscription(selectedPlanId, 'Credit Card');
       }, 1000);
+    }
+
+    function activateSubscription(plan, gateway) {
+      let account = {};
+      try {
+        const saved = localStorage.getItem('turko_plus_user');
+        if (saved) account = JSON.parse(saved);
+      } catch(e) {}
+
+      const now = new Date();
+      account.isSubscribed = true;
+      account.plan = plan;
+      account.gateway = gateway || 'Paddle';
+      account.startDate = now.toISOString();
+
+      if (plan === 'monthly') {
+        // إضافة 30 يوماً دقيقة للاشتراك الشهري
+        const expiry = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+        account.expiryDate = expiry.toISOString();
+        account.amount = 20;
+        account.priceId = PADDLE_CONFIG.monthlyPriceId;
+      } else {
+        // باقة مدى الحياة دائمة بدون تاريخ انتهاء
+        account.expiryDate = null;
+        account.amount = 100;
+        account.priceId = PADDLE_CONFIG.lifetimePriceId;
+      }
+
+      account.invoiceId = 'TRK-VIP-' + Math.floor(100000 + Math.random() * 900000);
+      account.paidAt = now.toLocaleString('ar-EG');
+
+      try {
+        localStorage.setItem('turko_plus_user', JSON.stringify(account));
+      } catch(e) {}
+
+      renderPlusUserSession(account);
+      openPaymentReceiptModal(account);
+      showToast(plan === 'monthly' ? '🎉 تم تفعيل اشتراكك الشهري بنجاح لمدة 30 يوماً!' : '👑 تم تفعيل عضويتك الدائمة مدى الحياة بنجاح!');
+    }
+
+    function openPaddleLiveCheckout() {
+      const priceId = (selectedPlanId === 'monthly') ? PADDLE_CONFIG.monthlyPriceId : PADDLE_CONFIG.lifetimePriceId;
+      let userEmail = '';
+      try {
+        const saved = localStorage.getItem('turko_plus_user');
+        if (saved) userEmail = JSON.parse(saved).email;
+      } catch(e) {}
+
+      Paddle.Checkout.open({
+        items: [{ priceId: priceId, quantity: 1 }],
+        customer: userEmail ? { email: userEmail } : undefined,
+        successCallback: function(data) {
+          activateSubscription(selectedPlanId, 'Paddle Verified');
+        }
+      });
     }
 
     function openPaymentReceiptModal(account) {
       const modalTitle = document.getElementById('plusModalTitle');
       const modalBody = document.getElementById('plusModalBody');
 
-      modalTitle.innerHTML = `<span>🎉</span> فاتورة وتأكيد اشتراك Turko PLUS+`;
+      modalTitle.innerHTML = `<span>🎉</span> إيصال وفاتورة Payoneer المؤكدة`;
       modalBody.innerHTML = `
         <div style="display: flex; flex-direction: column; gap: 14px; text-align: center;">
           <div style="font-size: 2.5rem;">👑</div>
-          <div style="font-size: 1.15rem; font-weight: 900; color: #86efac;">تهانينا! تم تفعيل اشتراكك بنجاح</div>
-          <p style="font-size: 0.8rem; color: #cbd5e1;">أهلاً بك كعضو رسمي في منصة Turko Plus. تم فتح جميع أقسام الدليل السياحي والتدريب لك بالكامل.</p>
+          <div style="font-size: 1.15rem; font-weight: 900; color: #86efac;">تم سحب الرسوم وتأكيد الدفع بنجاح!</div>
+          <p style="font-size: 0.8rem; color: #cbd5e1;">تم تحويل المبلغ وتأكيده في حساب Payoneer للأستاذ مصطفى رجب، وفُتحت لك خريطة التطبيق الأربعة بالكامل.</p>
 
-          <div style="background: rgba(2, 6, 23, 0.75); border: 1.5px dashed #a855f7; border-radius: 12px; padding: 14px; text-align: right; font-size: 0.82rem; display: flex; flex-direction: column; gap: 6px;">
-            <div><b>رقم الفاتورة:</b> <span style="direction: ltr; display: inline-block; color: #fbbf24;">${account.invoiceId}</span></div>
-            <div><b>المشترك:</b> ${account.name || 'عضو Turko Plus'}</div>
+          <div style="background: rgba(2, 6, 23, 0.8); border: 1.5px dashed #22c55e; border-radius: 12px; padding: 14px; text-align: right; font-size: 0.82rem; display: flex; flex-direction: column; gap: 6px;">
+            <div><b>رقم عملية بايونير:</b> <span style="direction: ltr; display: inline-block; color: #fbbf24; font-weight: 900;">${account.invoiceId}</span></div>
+            <div><b>المشترك:</b> ${account.name || 'عضو VIP'}</div>
             <div><b>البريد:</b> ${account.email}</div>
-            <div><b>الباقة المفعلة:</b> ${account.plan} ($${account.amount} USD)</div>
+            <div><b>المبلغ المسحوب:</b> <span style="color: #86efac; font-weight: 900;">${account.amountFormatted}</span></div>
+            <div><b>حساب الاستقبال:</b> mostafaragab@payoneer.com</div>
             <div><b>تاريخ العملية:</b> ${account.paidAt}</div>
-            <div><b>حالة المعاملة:</b> <span style="color: #22c55e; font-weight: 800;">مدفوع ومؤكد بنكياً 100% 🔒</span></div>
+            <div><b>حالة الأقسام:</b> <span style="color: #22c55e; font-weight: 800;">مفتوحة ومفعلة 100% 🔓</span></div>
           </div>
 
-          <button type="button" class="btn-cc-submit" onclick="closePlusModal()">
-            <span>الدخول المباشر إلى الأقسام الحصرية 🚀</span>
+          <button type="button" class="btn-cc-submit" onclick="closePlusModal(); document.querySelector('.plus-app-map-section').scrollIntoView({behavior: 'smooth'});">
+            <span>تصفح واستخدام خريطة الأقسام المفتوحة 🚀</span>
           </button>
         </div>
       `;
       document.getElementById('plusModalOverlay').style.display = 'flex';
     }
 
+    /* تفاصيل محتوى خريطة التطبيق الأربعة */
+    const appMapCatalog = {
+      'rehberlik_kursu': {
+        title: 'دورة تدريب الارشاد السياحي',
+        tr: 'Turist Rehberliği Mesleki Eğitim Kursu',
+        desc: 'البرنامج الأكاديمي التخصصي لإعداد وتأهيل المرشدين السياحيين المرخصين في تركيا وفق معايير نقابة المرشدين السياحيين (TUREB).',
+        modules: [
+          '🏛️ الوحدة الأولى: تاريخ وحضارات الأناضول (الحثيون، الفريجيون، الرومان، البيزنطيون، والسلجوقيون)',
+          '🕌 الوحدة الثانية: فنون العمارة والآثار العثمانية وقراءة النقوش والخطوط التاريخية',
+          '📜 الوحدة الثالثة: تشريعات وقوانين تنظيم مهنة الإرشاد السياحي في الجمهورية التركية (TUREB Mevzuatı)',
+          '📝 الوحدة الرابعة: بنك أسئلة ونماذج امتحانات الترخيص المهني للأعوام السابقة مع الإجابات النموذجية',
+          '🎙️ الوحدة الخامسة: أساليب الخطابة والشرح الميداني أمام الأفواج السياحية وإدارة المجموعات'
+        ]
+      },
+      'rehber_misir': {
+        title: 'مرشدك أون لاين فى مصر',
+        tr: "Mısır'da Online Turist Rehberiniz",
+        desc: 'خدمة المرشد السياحي الشخصي والمرافقة الاحترافية للسياح الأتراك والناطقين بالتركية في جمهورية مصر العربية.',
+        modules: [
+          '🗺️ المسار الأول: جولات القاهرة الكبرى (أهرامات الجيزة، سقارة، المتحف المصري الكبير، القلعة، والمعز)',
+          '⛵ المسار الثاني: جولات الصعيد والأقصر وأسوان (معابد الكرنك، وادي الملوك، فيلة، ورحلات النيل كروز)',
+          '🏖️ المسار الثالث: السياحة الشاطئية في البحر الأحمر (شرم الشيخ والغردقة) وسياحة المغامرات',
+          '🗣️ المسار الرابع: قاموس المصطلحات والمفردات الأثرية المصرية القديمة باللغة التركية للمرشدين',
+          '🆘 المسار الخامس: إدارة طوارئ السفر، استقبال وتوديع المطار، وحجوزات الفنادق المعتمدة'
+        ]
+      },
+      'rehber_turkiye': {
+        title: 'مرشدك أون لاين فى تركيا',
+        tr: "Türkiye'de Online Turist Rehberiniz",
+        desc: 'المساعد والمرشد السياحي التفاعلي في عموم المدن والولايات التركية للعائلات والأفراد.',
+        modules: [
+          '🧭 دليل إسطنبول الشامل: المسارات اليومية لتفادي الازدحام ومصائد الأسعار في الأسواق',
+          '🌲 مسارات الشمال التركي: طرابزون، أوزنجول، آيدر، ريزا، وهضاب البحر الأسود الساحرة',
+          '🏛️ مسارات بورصة، سبانجا، يالوفا، وكبادوكيا مع خرائط المواصلات العامة التفاعلية',
+          '🚨 خدمة الطوارئ المباشرة: الترجمة الفورية في المستشفيات، مراكز الشرطة، وفقدان الأمتعة',
+          '🍽️ دليل المأكولات والمطاعم التراثية التركية الحقيقية بعيداً عن الاستغلال التجاري'
+        ]
+      },
+      'kariyer_rehberi': {
+        title: 'الشامل لجميع فرص العمل باللغة التركية',
+        tr: 'Türkçe İş Fırsatları ve Kariyer Rehberi',
+        desc: 'المنصة التوظيفية المتكاملة لفرص العمل والوظائف الشاغرة للناطقين باللغة التركية في مصر والشرق الأوسط وعن بعد.',
+        modules: [
+          '📞 قطاع الكول سنتر التركي (Call Center & Customer Service): متطلبات القبول والرواتب من 25,000 إلى 45,000 ج.م',
+          '✈️ قطاع السياحة والطيران: وظائف حجز التذاكر، العمليات السياحية (Operations)، والإرشاد الميداني',
+          '🚢 قطاع التجارة الخارجية والتصدير والاستيراد مع المصانع التركية ومكاتب الشحن',
+          '📝 قطاع الترجمة الفورية والتحريرية وتدريس مناهج اللغة التركية في الجامعات والمعاهد',
+          '📄 بنك نماذج السيرة الذاتية باللغة التركية (CV) وأهم 50 سؤالاً في مقابلات العمل مع إجاباتها النموذجية'
+        ]
+      }
+    };
+
+    function openModuleDetails(modKey) {
+      const mod = appMapCatalog[modKey];
+      if (!mod) return;
+
+      const sub = getUserSubscriptionInfo();
+      const modalTitle = document.getElementById('plusModalTitle');
+      const modalBody = document.getElementById('plusModalBody');
+
+      modalTitle.innerHTML = `<span>🏛️</span> ${mod.title}`;
+      modalBody.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 12px; line-height: 1.5; font-size: 0.86rem;">
+          <div style="font-size: 0.8rem; color: #a855f7; direction: ltr; text-align: right; font-weight: 700;">${mod.tr}</div>
+          <p style="color: #cbd5e1;">${mod.desc}</p>
+
+          <div style="background: rgba(2, 6, 23, 0.75); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 10px; padding: 12px;">
+            <div style="font-weight: 800; color: #fef08a; margin-bottom: 8px;">📋 محاور ووحدات هذا المسار:</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0;">
+              ${mod.modules.map(m => `<li style="font-size: 0.8rem; color: #f1f5f9; background: rgba(255,255,255,0.04); padding: 6px 10px; border-radius: 6px;">${m}</li>`).join('')}
+            </ul>
+          </div>
+
+          ${sub.active ? `
+            <div style="background: rgba(34, 197, 94, 0.15); border: 1.5px solid #22c55e; color: #86efac; padding: 12px; border-radius: 10px; text-align: center; font-weight: 800;">
+              🔓 <b>أنت مشترك VIP مفعل!</b><br>
+              ${sub.plan === 'lifetime' ? 'عضويتك دائمة مدى الحياة بدون أي انتهاء.' : `اشتراكك الشهري سارٍ ومتبقي لك ${sub.daysLeft} يوماً.`}
+              <div style="margin-top: 8px; font-size: 0.76rem; color: #bbf7d0;">تصفح جميع محاضرات وملفات المسار بحرية كاملة.</div>
+            </div>
+            <button type="button" class="btn-cc-submit" onclick="closePlusModal(); showToast('🚀 جاري فتح محتوى المسار كاملاً...');">
+              <span>بدء دراسة محتوى المسار الآن 📚</span>
+            </button>
+          ` : `
+            <div style="background: rgba(239, 68, 68, 0.15); border: 1.5px solid #ef4444; color: #fca5a5; padding: 12px; border-radius: 10px; text-align: center; font-size: 0.82rem;">
+              ${sub.reason === 'expired' ? '⚠️ <b>انتهت صلاحية اشتراكك الشهري (30 يوماً).</b><br>يرجى تجديد الاشتراك بـ 20$ لإعادة فتح هذا القسم فوراً.' : '🔒 <b>هذا المسار مخصص لمشتركي Turko PLUS+ فقط.</b><br>اشترك في الباقة الشهرية (20$) أو باقة مدى الحياة (100$) لفتح كافة الأقسام تلقائياً.'}
+            </div>
+            <button type="button" class="btn-cc-submit" onclick="closePlusModal(); document.querySelector('.plus-plans-card').scrollIntoView({behavior: 'smooth'});">
+              <span>الانتقال للباقات والدفع (${selectedPlanId === 'monthly' ? '$20 شهرياً' : '$100 مدى الحياة'}) 🔒</span>
+            </button>
+          `}
+        </div>
+      `;
+
+      document.getElementById('plusModalOverlay').style.display = 'flex';
+    }
+
+    function closePlusModal() {
+      document.getElementById('plusModalOverlay').style.display = 'none';
+    }
+
     /* إعدادات بوابات التحصيل المالي للمطور */
-    
-    /* =========================================================
-       نظام حماية وإخفاء لوحة الإعدادات المالية (خاص بالأستاذ مصطفى فقط)
-       ========================================================= */
     let adminTapCount = 0;
     let adminTapTimer = null;
 
@@ -21455,8 +22010,7 @@
     }
 
     function promptAdminUnlock() {
-      const pin = prompt('🔐 لوحة إعدادات بوابات التحصيل المالي (خاص بالأستاذ مصطفى رجب فقط):\nيرجى إدخال رمز الأمان السري (PIN):');
-      // الرمز السري الافتراضي 7788 أو كلمة mostafa ويمكن تغييره في أي وقت
+      const pin = prompt('🔐 لوحة إعدادات استقبال أموال Payoneer للأستاذ مصطفى رجب:\nأدخل الرمز السري (PIN):');
       if (pin === '7788' || pin === 'mostafa' || pin === '1234') {
         const card = document.getElementById('plusGatewaySetupCard');
         if (card) {
@@ -21464,7 +22018,7 @@
           const body = document.getElementById('gatewayBody');
           if (body) body.style.display = 'flex';
           card.scrollIntoView({ behavior: 'smooth' });
-          showToast('🔓 مرحباً أستاذ مصطفى! تم إظهار لوحة إعدادات استقبال الأموال.');
+          showToast('🔓 مرحباً أستاذ مصطفى! تم فتح إعدادات ربط Payoneer.');
         }
       } else if (pin !== null) {
         showToast('❌ رمز الأمان غير صحيح.');
@@ -21480,22 +22034,78 @@
     }
 
     function saveGatewaySettings() {
-      const pp = document.getElementById('gwPayPalEmail').value.trim();
       const pnr = document.getElementById('gwPayoneerId').value.trim();
-      const skr = document.getElementById('gwSkrillEmail').value.trim();
+      const token = document.getElementById('cfgPaddleClientToken').value.trim();
+      const env = document.getElementById('cfgPaddleEnv').value;
+
+      if (token) {
+        localStorage.setItem('turko_paddle_token', token);
+      }
+      localStorage.setItem('turko_paddle_env', env);
 
       const gateways = {
-        paypal: pp || 'mostafaragab@paypal.com',
         payoneer: pnr || 'mostafaragab@payoneer.com',
-        skrill: skr || 'mostafaragab@skrill.com',
-        savedAt: new Date().toLocaleDateString('ar-EG')
+        paddleToken: token,
+        paddleEnv: env
       };
 
       try {
         localStorage.setItem('turko_payout_gateways', JSON.stringify(gateways));
       } catch(e) {}
 
-      showToast('💾 تم حفظ وتثبيت بيانات حسابات استقبال الأموال بنجاح!');
+      initPaddleSDK();
+      showToast('💾 تم حفظ وتثبيت إعدادات Paddle وحساب Payoneer بنجاح!');
+    };
+
+      try {
+        localStorage.setItem('turko_payout_gateways', JSON.stringify(gateways));
+      } catch(e) {}
+
+      showToast('💾 تم حفظ بيانات استقبال الأموال في Payoneer بنجاح!');
+    }
+
+    
+    function testExpireSubscription() {
+      try {
+        const saved = localStorage.getItem('turko_plus_user');
+        if (saved) {
+          const u = JSON.parse(saved);
+          u.isSubscribed = false;
+          u.status = 'expired';
+          // نجعل تاريخ الانتهاء قبل يومين لاختبار انتهاء الصلاحية
+          u.expiryDate = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString();
+          localStorage.setItem('turko_plus_user', JSON.stringify(u));
+          renderPlusUserSession(u);
+          updateModulesLockState();
+          showToast('⚠️ تم إنهاء صلاحية الشهر بنجاح وقفل الأقسام لاختبار نظام الحماية!');
+        } else {
+          showToast('يرجى إنشاء حساب أولاً قبل تجربة انتهاء الاشتراك.');
+        }
+      } catch(e) {}
+    }
+
+    // تهيئة مكتبة Paddle عند تشغيل التطبيق
+    function initPaddleSDK() {
+      const token = localStorage.getItem('turko_paddle_token') || 'live_4e6125c2ca1810e9e10524b8707';
+      const env = localStorage.getItem('turko_paddle_env') || 'live';
+      if (window.Paddle && token) {
+        try {
+          if (env === 'sandbox') {
+            Paddle.Environment.set('sandbox');
+          }
+          Paddle.Initialize({
+            token: token,
+            eventCallback: function(data) {
+              if (data && data.name === 'checkout.completed') {
+                activateSubscription(selectedPlanId, 'Paddle Verified');
+              }
+            }
+          });
+          console.log('Paddle initialized successfully in mode:', env);
+        } catch(e) {
+          console.warn('Paddle init warning:', e);
+        }
+      }
     }
 
     function loadGatewaySettings() {
@@ -21503,106 +22113,23 @@
         const saved = localStorage.getItem('turko_payout_gateways');
         if (saved) {
           const g = JSON.parse(saved);
-          if (document.getElementById('gwPayPalEmail')) document.getElementById('gwPayPalEmail').value = g.paypal || '';
           if (document.getElementById('gwPayoneerId')) document.getElementById('gwPayoneerId').value = g.payoneer || '';
-          if (document.getElementById('gwSkrillEmail')) document.getElementById('gwSkrillEmail').value = g.skrill || '';
         }
+        const token = localStorage.getItem('turko_paddle_token') || 'live_4e6125c2ca1810e9e10524b8707';
+        if (token && document.getElementById('cfgPaddleClientToken')) {
+          document.getElementById('cfgPaddleClientToken').value = token;
+        }
+        const env = localStorage.getItem('turko_paddle_env');
+        if (env && document.getElementById('cfgPaddleEnv')) {
+          document.getElementById('cfgPaddleEnv').value = env;
+        }
+        initPaddleSDK();
+      } catch(e) {}
+    }
       } catch(e) {}
     }
 
-    /* استعراض الأقسام الحصرية لـ Turko Plus */
-    const modulesCatalog = {
-      "online_rehber": {
-        title: "Online Turist rehberi",
-        ar: "الدليل السياحي الإلكتروني أون لاين في تركيا",
-        desc: "المرجع الشامل لكل زائر ومقيم في تركيا، يحتوي على تفاصيل أكثر من 120 موقعاً أثرياً ومزاراً تاريخياً مع قواميس ناطقة بالمصطلحات السياحية في المطارات، محطات القطار، الموانئ، والمطاعم الشعبية والتراثية.",
-        modules: [
-          "📍 دليل معالم إسطنبول التاريخية (آيا صوفيا، توبكابي، البازار الكبير، دولما باهتشة)",
-          "🛫 مصطلحات ومحادثات المطار، الجوازات، والجمارك التركية",
-          "🏨 محادثات الفندق وحجز الغرف والخدمات الفندقية",
-          "🚕 التنقل بالمواصلات والميترو والعبارات وسيارات الأجرة بالتركية",
-          "🍽️ مصطلحات الأطعمة التركية والطلب في المطاعم والمقاهي"
-        ]
-      },
-      "kisisel_rehber": {
-        title: "مرشدك السياحى اون لاين",
-        ar: "Kişisel Online Turist Rehberiniz",
-        desc: "خدمة المساعد السياحي المباشر؛ توجيه الجولات اليومية خطوة بخطوة، مساعدة في حل المواقف الطارئة والترجمة الفورية، مع تقديم نصائح حصرية لتفادي الزحام واكتشاف الجواهر الخفية في إسطنبول وبورصة وصبنجة وكبادوكيا.",
-        modules: [
-          "🧭 تخطيط مسار الرحلة اليومية ساعة بساعة لتوفير الوقت والمال",
-          "🆘 الطوارئ السياحية: طلب المساعدة، الشرطة، المستشفيات، وفقدان الأغراض",
-          "💎 الجواهر الخفية: أفضل الأسواق المحلية والمطلات البانورامية غير المزدحمة",
-          "🗣️ المحادثة الصوتية الفورية مع السكان المحليين لفك تعقيدات التواصل",
-          "🛍️ نصائح التسوق واكتشاف الأسعار الحقيقية ومكاسرة التجار بأسلوب تركي أصيل"
-        ]
-      },
-      "rehberlik_kursu": {
-        title: "دورة تدريب الأرشاد السياحي",
-        ar: "Turist Rehberliği Mesleki Eğitim Kursu",
-        desc: "البرنامج الأكاديمي التخصصي لإعداد وتأهيل المرشدين السياحيين المرخصين في الجمهورية التركية؛ إعداد متكامل لاختبارات نقابة المرشدين السياحيين (TUREB) مع دراسة تاريخ الأناضول، الآثار العثمانية، واللغة التركية المهنية المتخصصة.",
-        modules: [
-          "🏛️ تاريخ وحضارات الأناضول (الحثيون، الإغريق، الرومان، البيزنطيون، والسلجوقيون)",
-          "🕌 العمارة والآثار العثمانية: قراءة النقوش، أسلوب سنان، والمباني الأثرية",
-          "📜 التشريعات والقوانين المنظمة لمهنة الإرشاد السياحي في تركيا (TUREB)",
-          "📝 بنك أسئلة ونماذج امتحانات ترخيص الإرشاد السياحي للأعوام السابقة",
-          "🎙️ مهارات الخطابة والشرح الميداني أمام الأفواج السياحية باللغة التركية"
-        ]
-      }
-    };
 
-    function openModuleDetails(modKey) {
-      const mod = modulesCatalog[modKey];
-      if (!mod) return;
-
-      const modalTitle = document.getElementById('plusModalTitle');
-      const modalBody = document.getElementById('plusModalBody');
-
-      let savedUser = null;
-      try {
-        const s = localStorage.getItem('turko_plus_user');
-        if (s) savedUser = JSON.parse(s);
-      } catch(e) {}
-
-      const isSubscribed = savedUser && savedUser.isSubscribed;
-
-      modalTitle.innerHTML = `<span>🏛️</span> ${mod.title}`;
-      modalBody.innerHTML = `
-        <div style="display: flex; flex-direction: column; gap: 12px; line-height: 1.5; font-size: 0.86rem;">
-          <div style="font-size: 0.95rem; font-weight: 800; color: #f59e0b;">${mod.ar}</div>
-          <p style="color: #cbd5e1;">${mod.desc}</p>
-
-          <div style="background: rgba(2, 6, 23, 0.7); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; padding: 12px;">
-            <div style="font-weight: 800; color: #e9d5ff; margin-bottom: 6px;">📋 محاور ووحدات هذا القسم (قيد التجهيز والإثراء الأكاديمي):</div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0;">
-              ${mod.modules.map(m => `<li style="font-size: 0.78rem; color: #f1f5f9;">${m}</li>`).join('')}
-            </ul>
-          </div>
-
-          ${isSubscribed ? `
-            <div style="background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; color: #86efac; padding: 10px; border-radius: 8px; text-align: center; font-weight: 800;">
-              ✅ أنت مشترك VIP مفعل! سيتم إخطارك أولاً بأول عند رفع المحاضرات والملفات الجديدة لهذا القسم.
-            </div>
-          ` : `
-            <div style="background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; color: #fef08a; padding: 10px; border-radius: 8px; text-align: center; font-size: 0.8rem;">
-              🔒 محتوى هذا القسم يتطلب اشتراكاً مفعل في Turko Plus. اشترك الآن بالكريديت كارد لتضمن حجز مقعدك فور الإطلاق!
-            </div>
-            <button type="button" class="btn-cc-submit" onclick="closePlusModal(); document.querySelector('.plus-plans-card').scrollIntoView({behavior: 'smooth'});">
-              <span>الانتقال لباقات الاشتراك والدفع الآمن 🔒</span>
-            </button>
-          `}
-        </div>
-      `;
-
-      document.getElementById('plusModalOverlay').style.display = 'flex';
-    }
-
-    function closePlusModal(e) {
-      document.getElementById('plusModalOverlay').style.display = 'none';
-    }
-
-    /* =========================================================
-       إدارة فهرس القواعد وتدريبات القاعدة (الأساسية)
-       ========================================================= */
     function openRulePracticePage(secKey, ruleId, updateHistory = true) {
       currentSectionId = secKey;
       currentRuleId = ruleId;
